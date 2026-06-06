@@ -1,0 +1,453 @@
+/* 2026年机场Top博客自定义Premium设计系统 */
+
+:root {
+  --primary-gradient: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+  --accent-color: #7c3aed;
+  --card-hover-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* 丰富的主页文章卡片微动画与悬停效果 */
+.article-card {
+  transition: var(--transition-smooth) !important;
+  border: 1px solid var(--card-border) !important;
+  border-radius: 16px !important;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--card-hover-shadow) !important;
+    border-color: var(--accent-color) !important;
+
+    .article-title a {
+      background: var(--primary-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .article-image img {
+      transform: scale(1.04);
+    }
+  }
+
+  .article-image {
+    overflow: hidden;
+    img {
+      transition: var(--transition-smooth);
+    }
+  }
+}
+
+/* 优化侧边栏样式 */
+.sidebar {
+  .avatar {
+    border: 3px solid transparent;
+    background-image: var(--primary-gradient);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    padding: 3px;
+    box-shadow: 0 10px 15px -3px rgba(124, 58, 237, 0.2);
+    transition: var(--transition-smooth);
+
+    &:hover {
+      transform: rotate(360deg);
+    }
+  }
+
+  .menu {
+    li {
+      margin-bottom: 8px;
+      
+      a {
+        border-radius: 12px !important;
+        transition: var(--transition-smooth) !important;
+
+        &:hover {
+          background-color: var(--card-background) !important;
+          color: var(--accent-color) !important;
+          padding-left: 14px;
+        }
+
+        &.active {
+          background: var(--primary-gradient) !important;
+          color: #ffffff !important;
+          box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+        }
+      }
+    }
+  }
+}
+
+/* 正文部分的美化，提升可读性 */
+.article-content {
+  font-size: 1.1rem !important;
+  line-height: 1.8 !important;
+  color: var(--card-text-color);
+
+  h2 {
+    font-size: 1.6rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--card-border);
+    padding-bottom: 0.5rem;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 60px;
+      height: 2px;
+      background: var(--primary-gradient);
+    }
+  }
+
+  h3 {
+    font-size: 1.3rem;
+    margin-top: 1.5rem;
+  }
+
+  /* 表格高级化设计 */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+
+    th {
+      background: var(--primary-gradient);
+      color: #ffffff;
+      font-weight: 600;
+      padding: 12px 16px;
+      text-align: left;
+    }
+
+    td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--card-border);
+      background-color: var(--card-background);
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+    
+    tr:nth-child(even) td {
+      background-color: rgba(124, 58, 237, 0.02);
+    }
+  }
+
+  /* 行内代码与代码块 */
+  code {
+    background-color: rgba(124, 58, 237, 0.1) !important;
+    color: var(--accent-color) !important;
+    padding: 3px 6px !important;
+    border-radius: 6px !important;
+    font-family: inherit !important;
+  }
+
+  pre code {
+    background-color: inherit !important;
+    color: inherit !important;
+    padding: 0 !important;
+  }
+
+  /* 块引用 */
+  blockquote {
+    border-left: 4px solid var(--accent-color) !important;
+    background: rgba(124, 58, 237, 0.05) !important;
+    padding: 16px 20px !important;
+    border-radius: 0 12px 12px 0 !important;
+    margin: 1.5rem 0 !important;
+    
+    p {
+      margin: 0 !important;
+      font-style: italic;
+    }
+  }
+
+  /* 链接 */
+  a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px dashed var(--accent-color);
+    transition: var(--transition-smooth);
+
+    &:hover {
+      color: #2563eb;
+      border-bottom-style: solid;
+      border-bottom-color: #2563eb;
+    }
+  }
+}
+
+/* 按钮微动画 */
+.list-btn, .btn-go, .btn-review {
+  background: var(--primary-gradient);
+  color: white !important;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  display: inline-block;
+  text-decoration: none;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+  }
+}
+
+/* 机场列表页面的定制样式 */
+.airport-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.airport-card-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: var(--card-background);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--card-hover-shadow);
+    border-color: var(--accent-color);
+  }
+}
+
+.airport-card-rank {
+  font-size: 2rem;
+  font-weight: 800;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-secondary);
+}
+
+.airport-card-rank.rank-1 { color: #eab308; }
+.airport-card-rank.rank-2 { color: #94a3b8; }
+.airport-card-rank.rank-3 { color: #b45309; }
+
+.airport-card-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--primary-gradient);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  color: white;
+  font-weight: bold;
+  margin-right: 20px;
+  margin-left: 10px;
+  flex-shrink: 0;
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.airport-card-info {
+  flex-grow: 1;
+  margin-right: 20px;
+}
+
+.airport-card-title-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+
+  h3 {
+    margin: 0;
+    font-size: 1.35rem;
+    font-weight: 700;
+  }
+
+  .rating {
+    font-size: 0.85rem;
+    color: #eab308;
+    background: rgba(234, 179, 8, 0.1);
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-weight: 600;
+  }
+}
+
+.airport-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+
+  .card-tag {
+    font-size: 0.75rem;
+    background: rgba(124, 58, 237, 0.08);
+    color: var(--accent-color);
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-weight: 500;
+  }
+}
+
+.airport-card-desc {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.airport-card-meta {
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 20px;
+  border-left: 1px dashed var(--card-border);
+  flex-shrink: 0;
+}
+
+.airport-card-price-section {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  
+  .price {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #2563eb;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.airport-card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6px;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+
+  span.status-yes { color: #10b981; font-weight: 600; }
+  span.status-no { color: #ef4444; }
+}
+
+.airport-card-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 140px;
+  padding-left: 20px;
+  flex-shrink: 0;
+
+  .btn-action {
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    text-decoration: none;
+    display: block;
+  }
+
+  .btn-review-link {
+    background: rgba(124, 58, 237, 0.1);
+    color: var(--accent-color) !important;
+    border: 1px solid rgba(124, 58, 237, 0.2);
+
+    &:hover {
+      background: var(--accent-color);
+      color: white !important;
+    }
+  }
+
+  .btn-go-link {
+    background: var(--primary-gradient);
+    color: white !important;
+    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.15);
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(37, 99, 235, 0.3);
+    }
+  }
+}
+
+/* 响应式适配 */
+@media (max-width: 900px) {
+  .airport-card-item {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 20px;
+  }
+
+  .airport-card-rank {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: auto;
+    font-size: 1.5rem;
+  }
+
+  .airport-card-avatar {
+    margin-bottom: 16px;
+    margin-left: 0;
+  }
+
+  .airport-card-info {
+    margin-right: 0;
+    margin-bottom: 16px;
+  }
+
+  .airport-card-meta {
+    width: 100%;
+    padding-left: 0;
+    border-left: none;
+    border-top: 1px dashed var(--card-border);
+    padding-top: 16px;
+    margin-bottom: 16px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .airport-card-price-section {
+    margin-bottom: 0;
+  }
+
+  .airport-card-actions {
+    width: 100%;
+    padding-left: 0;
+    flex-direction: row;
+    gap: 12px;
+    
+    .btn-action {
+      flex: 1;
+    }
+  }
+}
+

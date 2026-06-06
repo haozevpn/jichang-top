@@ -1,0 +1,8 @@
+[zh]
+    label  = "简体中文"
+    title  = "2026最新稳定高速机场推荐与翻墙梯子测评排行榜 - 机场Top"
+    weight = 1
+
+    [zh.params.sidebar]
+        subtitle = "客观、中立、真实的翻墙机场测评与网络技术科普，为您出海保驾护航。"
+

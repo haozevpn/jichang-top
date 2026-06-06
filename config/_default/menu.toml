@@ -1,0 +1,41 @@
+[[main]]
+    identifier = "home"
+    name       = "首页"
+    url        = "/"
+    weight     = 1
+    [main.params]
+        icon = "home"
+
+[[main]]
+    identifier = "airport"
+    name       = "机场推荐"
+    url        = "/airport/"
+    weight     = 2
+    [main.params]
+        icon = "link"
+
+[[main]]
+    identifier = "reviews"
+    name       = "机场评测"
+    url        = "/categories/机场测评/"
+    weight     = 3
+    [main.params]
+        icon = "messages"
+
+[[main]]
+    identifier = "guides"
+    name       = "新手教程"
+    url        = "/categories/科学上网指南/"
+    weight     = 4
+    [main.params]
+        icon = "user"
+
+[[social]]
+    identifier = "telegram"
+    name       = "Telegram"
+    url        = "https://t.me/jichangtop"
+    [social.params]
+        icon = "brand-telegram"
+
+
+

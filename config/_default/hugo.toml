@@ -1,0 +1,14 @@
+baseURL                = "https://jichang-top.com/"
+locale                 = "zh-cn"
+title                  = "2026最新稳定高速机场推荐与翻墙梯子测评排行榜 - 机场Top"
+defaultContentLanguage = "zh"
+hasCJKLanguage         = true
+theme                  = "hugo-theme-stack"
+
+[pagination]
+    pagerSize = 10
+
+[permalinks]
+    post = "/p/:slug/"
+    page = "/:slug/"
+
