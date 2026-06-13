@@ -30,10 +30,18 @@
     [main.params]
         icon = "user"
 
+[[main]]
+    identifier = "about"
+    name       = "关于本站"
+    url        = "/about/"
+    weight     = 5
+    [main.params]
+        icon = "user"
+
 [[social]]
     identifier = "telegram"
     name       = "Telegram"
-    url        = "https://t.me/jichangtop"
+    url        = "https://t.me/ttp1123"
     [social.params]
         icon = "brand-telegram"
 

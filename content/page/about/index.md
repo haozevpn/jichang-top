@@ -24,7 +24,7 @@ slug: "about"
 
 *如果您有合作意向、测评需求或技术反馈，欢迎通过以下渠道与我们联系：*
 
-* **Telegram 频道**：[@jichangtop](https://t.me/jichangtop)
-* **官方邮箱**：[contact@jichang-top.com](mailto:contact@jichang-top.com)
+* **Telegram 频道**：[@ttp1123](https://t.me/ttp1123)
+* **官方邮箱**：[haozevpn@gmail.com](mailto:haozevpn@gmail.com)
 
 
