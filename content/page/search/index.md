@@ -5,4 +5,7 @@ layout: "search"
 outputs:
     - html
     - json
+private: true
+sitemap:
+    disable: true
 ---
