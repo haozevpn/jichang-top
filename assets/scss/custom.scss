@@ -206,4 +206,24 @@
 
 /* 已清理卡片与对比表 CSS 样式，回归纯 Markdown 原生渲染 */
 
+/* 隐藏右侧边栏的 Widget 图标并优化对齐 */
+.right-sidebar {
+  .widget-icon {
+    display: none !important;
+  }
+  
+  .section-title, .widget-title {
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+  }
+  
+  /* 针对 hugo-theme-stack 重置 widget-title flex 布局或 margin */
+  .widget {
+    header {
+      margin-left: 0 !important;
+      padding-left: 0 !important;
+    }
+  }
+}
+
 
