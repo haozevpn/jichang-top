@@ -451,3 +451,173 @@
   }
 }
 
+/* 隐藏右侧侧边栏的 Widget 图标并优化对齐 */
+.right-sidebar {
+  .widget-icon {
+    display: none !important;
+  }
+  
+  .section-title, .widget-title {
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+  }
+  
+  /* 针对 hugo-theme-stack 重置 widget-title flex 布局或 margin */
+  .widget {
+    header {
+      margin-left: 0 !important;
+      padding-left: 0 !important;
+    }
+  }
+}
+
+/* ==========================================
+   2026年机场核心参数对比表 Premium 样式
+   ========================================== */
+.airport-comparison-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  margin: 2.5rem 0;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08), 0 4px 12px -2px rgba(0, 0, 0, 0.03);
+  border: 1px solid var(--card-border);
+  background: var(--card-background);
+  transition: var(--transition-smooth);
+
+  /* 自适应滚动条美化 */
+  &::-webkit-scrollbar {
+    height: 6px;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: rgba(124, 58, 237, 0.2);
+    border-radius: 10px;
+    &:hover {
+      background: rgba(124, 58, 237, 0.4);
+    }
+  }
+}
+
+.airport-comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  min-width: 900px;
+  line-height: 1.5;
+
+  th {
+    background: var(--primary-gradient);
+    color: #ffffff;
+    font-weight: 700;
+    padding: 16px 20px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    border: none;
+  }
+
+  td {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--card-border);
+    vertical-align: middle;
+    color: var(--card-text-color);
+    transition: var(--transition-smooth);
+    background-color: var(--card-background);
+  }
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+
+  tr.highlight-row {
+    td {
+      background-color: rgba(124, 58, 237, 0.015);
+    }
+    &:hover td {
+      background-color: rgba(124, 58, 237, 0.04) !important;
+    }
+  }
+
+  tr:not(.highlight-row) {
+    &:hover td {
+      background-color: rgba(0, 0, 0, 0.015) !important;
+    }
+  }
+
+  /* 排名微型胶囊 */
+  .rank-badge {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    font-weight: 800;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    background: rgba(0, 0, 0, 0.05);
+
+    &.rank-1 { background: linear-gradient(135deg, #fef08a 0%, #eab308 100%); color: #78350f; box-shadow: 0 2px 4px rgba(234, 179, 8, 0.2); }
+    &.rank-2 { background: linear-gradient(135deg, #f1f5f9 0%, #cbd5e1 100%); color: #334155; box-shadow: 0 2px 4px rgba(203, 213, 225, 0.2); }
+    &.rank-3 { background: linear-gradient(135deg, #ffedd5 0%, #f97316 100%); color: #7c2d12; box-shadow: 0 2px 4px rgba(249, 115, 22, 0.2); }
+  }
+
+  /* 机场名称样式 */
+  .airport-name {
+    font-size: 0.95rem;
+    color: var(--card-text-color);
+  }
+
+  /* 链路类型标识 */
+  .link-type-badge {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 6px;
+    display: inline-block;
+    
+    &.direct { background: rgba(59, 130, 246, 0.1); color: #2563eb; }
+    &.relay { background: rgba(16, 185, 129, 0.1); color: #059669; }
+    &.iplc { background: rgba(139, 92, 246, 0.1); color: #7c3aed; }
+  }
+
+  /* 状态指示 */
+  .status-yes-badge {
+    color: #10b981;
+    font-weight: 600;
+  }
+  .status-no-badge {
+    color: #ef4444;
+    font-weight: 500;
+  }
+
+  /* 价格高亮 */
+  .table-price {
+    font-weight: 700;
+    color: #2563eb;
+    font-size: 0.95rem;
+  }
+
+  /* 表格内购买按钮 */
+  .table-action-btn {
+    display: inline-block;
+    padding: 6px 14px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #ffffff !important;
+    background: var(--primary-gradient);
+    border-radius: 8px;
+    text-decoration: none !important;
+    border: none !important;
+    box-shadow: 0 4px 8px rgba(37, 99, 235, 0.15);
+    transition: var(--transition-smooth);
+
+    &:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 12px rgba(37, 99, 235, 0.25);
+    }
+  }
+}
+

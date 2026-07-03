@@ -1,0 +1,26 @@
+{{ define "main" }}
+    {{- $pages := where .Site.RegularPages "Type" "in" site.Params.mainSections -}}
+    {{- $filtered := slice -}}
+    {{- range $pages -}}
+        {{- $isGuide := false -}}
+        {{- with .Params.categories -}}
+            {{- if in . "科学上网指南" -}}
+                {{- $isGuide = true -}}
+            {{- end -}}
+        {{- end -}}
+        {{- if $isGuide -}}
+            {{- $filtered = $filtered | append . -}}
+        {{- end -}}
+    {{- end -}}
+    <section class="article-list">
+        {{ range $filtered }}
+            {{ partial "article-list/default" . }}
+        {{ end }}
+    </section>
+
+    {{- partial "footer/footer" . -}}
+{{ end }}
+
+{{ define "right-sidebar" }}
+    {{ partial "sidebar/right.html" (dict "Context" . "Scope" "homepage") }}
+{{ end }}

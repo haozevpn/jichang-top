@@ -15,6 +15,114 @@ slug: "airport"
   </p>
 </div>
 
+<div class="airport-comparison-table-wrapper">
+  <table class="airport-comparison-table">
+    <thead>
+      <tr>
+        <th style="text-align: center;">排名</th>
+        <th>机场名称</th>
+        <th>线路类型</th>
+        <th style="text-align: center;">起步价格</th>
+        <th style="text-align: center;">不限时流量</th>
+        <th>流媒体/AI 解锁与特色</th>
+        <th style="text-align: center;">操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="highlight-row">
+        <td style="text-align: center;"><span class="rank-badge rank-1">1</span></td>
+        <td class="airport-name"><strong>瞬云机场</strong></td>
+        <td><span class="link-type-badge direct">Anycast直连</span></td>
+        <td class="table-price" style="text-align: center;">￥8.25/月起</td>
+        <td style="text-align: center;"><span class="status-yes-badge">✅ 支持</span></td>
+        <td>1倍率无虚标，高性价比首选，大带宽流畅体验</td>
+        <td style="text-align: center;"><a href="https://bbb.jichang.best/#/register?code=o4I4kToe" class="table-action-btn" target="_blank" rel="nofollow">官网注册</a></td>
+      </tr>
+      <tr class="highlight-row">
+        <td style="text-align: center;"><span class="rank-badge rank-2">2</span></td>
+        <td class="airport-name"><strong>寰宇云</strong></td>
+        <td><span class="link-type-badge relay">BGP多线中转</span></td>
+        <td class="table-price" style="text-align: center;">￥7.40/月起</td>
+        <td style="text-align: center;"><span class="status-yes-badge">✅ 支持</span></td>
+        <td>便宜按量付费，完美的防跑路高性价比备用梯子</td>
+        <td style="text-align: center;"><a href="https://bbb.jichang.best/#/register?code=o4I4kToe" class="table-action-btn" target="_blank" rel="nofollow">官网注册</a></td>
+      </tr>
+      <tr class="highlight-row">
+        <td style="text-align: center;"><span class="rank-badge rank-3">3</span></td>
+        <td class="airport-name"><strong>极连云</strong></td>
+        <td><span class="link-type-badge iplc">IEPL企业专线</span></td>
+        <td class="table-price" style="text-align: center;">￥8.00/月起</td>
+        <td style="text-align: center;"><span class="status-yes-badge">✅ 支持</span></td>
+        <td>不限速与设备数，多端优化，高性价比专线首选</td>
+        <td style="text-align: center;"><a href="https://haozevpn.jlyvipaff.com/#/?code=KUKfOY13" class="table-action-btn" target="_blank" rel="nofollow">官网注册</a></td>
+      </tr>
+      <tr>
+        <td style="text-align: center;"><span class="rank-badge">4</span></td>
+        <td class="airport-name"><strong>光年梯</strong></td>
+        <td><span class="link-type-badge iplc">IEPL物理专线</span></td>
+        <td class="table-price" style="text-align: center;">￥7.50/月起</td>
+        <td style="text-align: center;"><span class="status-yes-badge">✅ 支持</span></td>
+        <td>多年老牌大厂，极高容灾稳定性，抗封锁能力强</td>
+        <td style="text-align: center;"><a href="https://gnt001.gntvipaff.cc/#/?code=j1ufpE44" class="table-action-btn" target="_blank" rel="nofollow">官网注册</a></td>
+      </tr>
+      <tr>
+        <td style="text-align: center;"><span class="rank-badge">5</span></td>
+        <td class="airport-name"><strong>极速云机场</strong></td>
+        <td><span class="link-type-badge relay">中转加速</span></td>
+        <td class="table-price" style="text-align: center;">￥8.25/月起</td>
+        <td style="text-align: center;"><span class="status-yes-badge">✅ 支持</span></td>
+        <td>大带宽高速传输，超低起步价格，新手高性价比选择</td>
+        <td style="text-align: center;"><a href="https://ask.xsccusm.com:8888/#/register?code=RENHYxqv" class="table-action-btn" target="_blank" rel="nofollow">官网注册</a></td>
+      </tr>
+      <tr>
+        <td style="text-align: center;"><span class="rank-badge">6</span></td>
+        <td class="airport-name"><strong>山水云</strong></td>
+        <td><span class="link-type-badge relay">隧道中转</span></td>
+        <td class="table-price" style="text-align: center;">￥14.99/月起</td>
+        <td style="text-align: center;"><span class="status-yes-badge">✅ 支持</span></td>
+        <td>设备连接无限制，IP干净，流媒体/AI深度解锁</td>
+        <td style="text-align: center;"><a href="https://haozevpn.jlyvipaff.com/#/?code=KUKfOY13" class="table-action-btn" target="_blank" rel="nofollow">官网注册</a></td>
+      </tr>
+      <tr>
+        <td style="text-align: center;"><span class="rank-badge">7</span></td>
+        <td class="airport-name"><strong>秒秒云</strong></td>
+        <td><span class="link-type-badge relay">高速中转</span></td>
+        <td class="table-price" style="text-align: center;">￥14.00/月起</td>
+        <td style="text-align: center;"><span class="status-yes-badge">✅ 支持</span></td>
+        <td>原生与住宅IP多，AI大模型风控调优，极客专属</td>
+        <td style="text-align: center;"><a href="https://dl1.mmy8.com/#/register?code=g3bq7bpK" class="table-action-btn" target="_blank" rel="nofollow">官网注册</a></td>
+      </tr>
+      <tr>
+        <td style="text-align: center;"><span class="rank-badge">8</span></td>
+        <td class="airport-name"><strong>迅达VPN</strong></td>
+        <td><span class="link-type-badge direct">直连公网</span></td>
+        <td class="table-price" style="text-align: center;">￥15.00/月起</td>
+        <td style="text-align: center;"><span class="status-no-badge">❌ 不支持</span></td>
+        <td>千兆大带宽，下载与游戏首选，老牌稳定</td>
+        <td style="text-align: center;"><a href="https://ask.xsccusm.com:8888/#/register?code=RENHYxqv" class="table-action-btn" target="_blank" rel="nofollow">官网注册</a></td>
+      </tr>
+      <tr>
+        <td style="text-align: center;"><span class="rank-badge">9</span></td>
+        <td class="airport-name"><strong>Edge-X机场</strong></td>
+        <td><span class="link-type-badge iplc">IPLC专线</span></td>
+        <td class="table-price" style="text-align: center;">￥16.80/月起</td>
+        <td style="text-align: center;"><span class="status-yes-badge">✅ 支持</span></td>
+        <td>全专线低延迟，不设设备上限，8K超清秒开</td>
+        <td style="text-align: center;"><a href="https://gnt001.gntvipaff.cc/#/?code=j1ufpE44" class="table-action-btn" target="_blank" rel="nofollow">官网注册</a></td>
+      </tr>
+      <tr>
+        <td style="text-align: center;"><span class="rank-badge">10</span></td>
+        <td class="airport-name"><strong>边界云</strong></td>
+        <td><span class="link-type-badge iplc">IEPL企业专线</span></td>
+        <td class="table-price" style="text-align: center;">￥15.00/月起</td>
+        <td style="text-align: center;"><span class="status-no-badge">❌ 不支持</span></td>
+        <td>50+全球节点，3天退款保障，流媒体/AI解锁优异</td>
+        <td style="text-align: center;"><a href="https://www.lvpn.cc/r/6UQDZT" class="table-action-btn" target="_blank" rel="nofollow">官网注册</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 <div class="airport-list-container">
 
   <div class="airport-card-item">
