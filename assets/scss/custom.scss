@@ -208,92 +208,90 @@
 .airport-list-container {
   display: flex;
   flex-direction: column;
-  gap: 28px;
-  margin-top: 24px;
+  gap: 40px; /* 增加大留白 */
+  margin-top: 32px;
 }
 
 .airport-card-item {
   display: flex;
-  flex-direction: row;
+  flex-direction: column; /* 纵向平铺流 */
   align-items: stretch;
-  background: var(--card-background);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  border-radius: 20px;
-  padding: 28px;
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0, 0, 0, 0.01);
+  background: transparent; /* 极简透明背景 */
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08); /* 极细下分割线 */
+  border-radius: 0;
+  padding: 0 0 40px 0; /* 仅底部内边距，配合下分割线 */
+  box-shadow: none;
   transition: var(--transition-smooth);
   position: relative;
-  overflow: hidden;
 
-  /* 暗色模式边框微调 */
   [data-scheme="dark"] & {
-    border-color: rgba(255, 255, 255, 0.05);
-    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+  }
+
+  &:last-child {
+    border-bottom: none; /* 最后一项去掉下分割线 */
   }
 
   &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px -15px rgba(124, 58, 237, 0.12);
-    border-color: rgba(124, 58, 237, 0.3);
+    transform: none;
+    box-shadow: none;
+    
+    h3 {
+      color: var(--accent-color); /* 悬停时标题变色 */
+    }
   }
 }
 
-/* 精致的悬浮角标 */
+/* 精致的排名徽章 */
 .airport-card-badge {
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 5px 16px;
-  font-size: 0.72rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 10px;
+  font-size: 0.78rem;
   font-weight: 800;
   color: #ffffff;
   background: linear-gradient(135deg, #64748b 0%, #475569 100%);
-  border-bottom-right-radius: 12px;
+  border-radius: 6px;
   letter-spacing: 0.5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-  text-transform: uppercase;
+  margin-right: 12px;
+  vertical-align: middle;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 
   &.badge-1 {
     background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
-    box-shadow: 0 2px 8px rgba(217, 119, 6, 0.2);
   }
   &.badge-2 {
     background: linear-gradient(135deg, #94a3b8 0%, #475569 100%);
-    box-shadow: 0 2px 8px rgba(71, 85, 105, 0.15);
   }
   &.badge-3 {
     background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
-    box-shadow: 0 2px 8px rgba(234, 88, 12, 0.15);
   }
 }
 
-/* 左侧信息区 */
-.airport-card-info {
-  flex-grow: 1;
-  margin-right: 28px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
+/* 标题区 */
 .airport-card-title-section {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 10px;
+  justify-content: space-between; /* 评分与标题两端分布 */
+  margin-bottom: 12px;
 
   h3 {
     margin: 0;
-    font-size: 1.45rem;
+    font-size: 1.55rem; /* 大字号标题 */
     font-weight: 800;
     color: var(--card-text-color);
+    display: flex;
+    align-items: center;
+    transition: var(--transition-smooth);
   }
 
   .rating {
-    font-size: 0.78rem;
+    font-size: 0.85rem;
     color: #d97706;
     background: rgba(217, 119, 6, 0.08);
-    padding: 2px 8px;
+    padding: 3px 10px;
     border-radius: 8px;
     font-weight: 700;
     letter-spacing: 0.2px;
@@ -305,19 +303,20 @@
   }
 }
 
+/* 标签区 */
 .airport-card-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
-  margin-bottom: 14px;
+  gap: 8px;
+  margin-bottom: 16px;
 
   .card-tag {
-    font-size: 0.72rem;
+    font-size: 0.78rem;
     background: rgba(124, 58, 237, 0.05);
     color: var(--accent-color);
-    padding: 3px 8px;
+    padding: 4px 10px;
     border-radius: 6px;
-    font-weight: 600;
+    font-weight: 700;
     border: 1px solid rgba(124, 58, 237, 0.08);
 
     [data-scheme="dark"] & {
@@ -328,43 +327,47 @@
   }
 }
 
+/* 大字描述，极佳阅读质感 */
 .airport-card-desc {
-  font-size: 0.92rem;
+  font-size: 1.02rem; /* 增大字号，完美解决内嵌字体过小问题 */
   color: var(--text-secondary);
-  line-height: 1.65;
-  margin: 0;
+  line-height: 1.75;
+  margin: 0 0 20px 0;
 }
 
-/* 右侧规格与控制栏 */
-.airport-card-meta {
-  width: 200px;
+/* 底部价格与动作条 */
+.airport-card-footer {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
   justify-content: space-between;
-  padding-left: 28px;
-  border-left: 1px solid rgba(0, 0, 0, 0.06);
-  flex-shrink: 0;
+  flex-wrap: wrap;
+  gap: 20px;
+  background: rgba(0, 0, 0, 0.015);
+  padding: 16px 24px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.03);
 
   [data-scheme="dark"] & {
-    border-left-color: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.01);
+    border-color: rgba(255, 255, 255, 0.03);
   }
 }
 
 .airport-card-price-section {
   display: flex;
   align-items: baseline;
-  margin-bottom: 8px;
   color: var(--text-secondary);
   
   .price-symbol {
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-weight: 800;
     color: #2563eb;
     margin-right: 1px;
   }
 
   .price {
-    font-size: 1.8rem;
+    font-size: 1.85rem;
     font-weight: 900;
     background: var(--primary-gradient);
     -webkit-background-clip: text;
@@ -372,18 +375,17 @@
   }
 
   .price-unit {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     margin-left: 4px;
-    font-weight: 500;
+    font-weight: 600;
   }
 }
 
 .airport-card-spec {
   display: flex;
-  flex-direction: column;
-  gap: 5px;
-  margin-bottom: 16px;
-  font-size: 0.82rem;
+  flex-direction: row;
+  gap: 16px;
+  font-size: 0.88rem;
   color: var(--text-secondary);
 
   .spec-item {
@@ -392,17 +394,17 @@
 
     &.status-yes {
       color: #10b981;
-      font-weight: 600;
+      font-weight: 700;
     }
     &.status-no {
       color: #ef4444;
-      font-weight: 500;
+      font-weight: 600;
     }
 
     a {
       color: var(--accent-color);
       text-decoration: none;
-      font-weight: 600;
+      font-weight: 700;
       
       &:hover {
         text-decoration: underline;
@@ -413,19 +415,19 @@
 
 .airport-card-actions {
   display: flex;
-  flex-direction: column;
-  gap: 8px;
+  flex-direction: row;
+  gap: 12px;
 
   .btn-action {
-    padding: 9px;
-    border-radius: 10px;
-    font-size: 0.82rem;
-    font-weight: 700;
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 800;
     text-align: center;
     cursor: pointer;
     transition: var(--transition-smooth);
     text-decoration: none;
-    display: block;
+    display: inline-block;
   }
 
   .btn-review-link {
@@ -458,27 +460,27 @@
 
     &:hover {
       transform: translateY(-1px);
-      box-shadow: 0 8px 16px rgba(37, 99, 235, 0.25);
+      box-shadow: 0 6px 14px rgba(37, 99, 235, 0.25);
     }
   }
 }
 
 /* ==========================================
-   Premium 级极简对比表样式
+   对比表大字号极简优化
    ========================================== */
 .airport-comparison-table-wrapper {
   width: 100%;
   overflow-x: auto;
   margin: 2.5rem 0;
-  border-radius: 20px;
-  box-shadow: 0 10px 40px -15px rgba(0, 0, 0, 0.04), 0 2px 4px rgba(0, 0, 0, 0.01);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
+  box-shadow: 0 10px 40px -15px rgba(0, 0, 0, 0.03), 0 2px 4px rgba(0, 0, 0, 0.005);
+  border: 1px solid rgba(0, 0, 0, 0.04);
   background: var(--card-background);
   transition: var(--transition-smooth);
 
   [data-scheme="dark"] & {
-    border-color: rgba(255, 255, 255, 0.05);
-    box-shadow: 0 10px 40px -15px rgba(0, 0, 0, 0.4);
+    border-color: rgba(255, 255, 255, 0.04);
+    box-shadow: 0 10px 40px -15px rgba(0, 0, 0, 0.3);
   }
 
   &::-webkit-scrollbar {
@@ -488,10 +490,10 @@
     background: transparent;
   }
   &::-webkit-scrollbar-thumb {
-    background: rgba(124, 58, 237, 0.15);
+    background: rgba(124, 58, 237, 0.12);
     border-radius: 10px;
     &:hover {
-      background: rgba(124, 58, 237, 0.3);
+      background: rgba(124, 58, 237, 0.25);
     }
   }
 }
@@ -499,16 +501,16 @@
 .airport-comparison-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.9rem;
+  font-size: 0.95rem; /* 增大表格基础字体 */
   min-width: 950px;
-  line-height: 1.5;
+  line-height: 1.6;
 
   th {
     background: transparent;
     color: var(--text-secondary);
     font-weight: 700;
-    padding: 18px 20px;
-    font-size: 0.8rem;
+    padding: 20px 22px;
+    font-size: 0.85rem;
     border-bottom: 2px solid rgba(124, 58, 237, 0.1);
     text-align: left;
     letter-spacing: 0.5px;
@@ -519,7 +521,7 @@
   }
 
   td {
-    padding: 16px 20px;
+    padding: 18px 22px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.03);
     vertical-align: middle;
     color: var(--card-text-color);
@@ -540,33 +542,32 @@
     
     &:hover {
       td {
-        background-color: rgba(124, 58, 237, 0.02) !important;
+        background-color: rgba(124, 58, 237, 0.015) !important;
         
         [data-scheme="dark"] & {
-          background-color: rgba(167, 139, 250, 0.02) !important;
+          background-color: rgba(167, 139, 250, 0.015) !important;
         }
       }
       td:first-child {
-        border-top-left-radius: 12px;
-        border-bottom-left-radius: 12px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
       }
       td:last-child {
-        border-top-right-radius: 12px;
-        border-bottom-right-radius: 12px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
       }
     }
   }
 
-  /* 排名胶囊 */
   .rank-badge {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 26px;
-    height: 26px;
+    width: 28px;
+    height: 28px;
     border-radius: 50%;
     font-weight: 800;
-    font-size: 0.78rem;
+    font-size: 0.82rem;
     color: var(--text-secondary);
     background: rgba(0, 0, 0, 0.04);
 
@@ -580,13 +581,11 @@
   }
 
   .airport-name {
-    font-size: 0.92rem;
-    color: var(--card-text-color);
+    font-size: 0.98rem;
   }
 
-  /* 链路类型标识 */
   .link-type-badge {
-    font-size: 0.72rem;
+    font-size: 0.75rem;
     font-weight: 700;
     padding: 3px 8px;
     border-radius: 6px;
@@ -603,22 +602,21 @@
     }
   }
 
-  /* 状态指示 */
   .status-yes-badge {
     color: #10b981;
-    font-weight: 600;
-    font-size: 0.85rem;
+    font-weight: 700;
+    font-size: 0.9rem;
   }
   .status-no-badge {
     color: #ef4444;
-    font-weight: 500;
-    font-size: 0.85rem;
+    font-weight: 600;
+    font-size: 0.9rem;
   }
 
   .table-price {
     font-weight: 700;
     color: #2563eb;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     
     [data-scheme="dark"] & {
       color: #60a5fa;
@@ -627,9 +625,9 @@
 
   .table-action-btn {
     display: inline-block;
-    padding: 5px 12px;
-    font-size: 0.78rem;
-    font-weight: 700;
+    padding: 6px 14px;
+    font-size: 0.8rem;
+    font-weight: 800;
     color: #ffffff !important;
     background: var(--primary-gradient);
     border-radius: 8px;
@@ -646,72 +644,42 @@
 }
 
 /* 响应式适配 */
-@media (max-width: 860px) {
+@media (max-width: 768px) {
   .airport-card-item {
+    padding: 0 0 32px 0;
+  }
+
+  .airport-card-title-section {
     flex-direction: column;
-    align-items: stretch;
-    padding: 24px;
-    padding-top: 36px;
-  }
+    align-items: flex-start;
+    gap: 8px;
 
-  .airport-card-badge {
-    border-bottom-right-radius: 12px;
-  }
-
-  .airport-card-info {
-    margin-right: 0;
-    margin-bottom: 20px;
-  }
-
-  .airport-card-meta {
-    width: 100%;
-    padding-left: 0;
-    border-left: none;
-    border-top: 1px dashed rgba(0, 0, 0, 0.08);
-    padding-top: 20px;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-
-    [data-scheme="dark"] & {
-      border-top-color: rgba(255, 255, 255, 0.08);
+    .rating {
+      align-self: flex-start;
     }
   }
 
-  .airport-card-price-section {
-    margin-bottom: 0;
+  .airport-card-desc {
+    font-size: 0.98rem;
   }
 
-  .airport-card-spec {
-    display: none; /* 移动端卡片内部为了极致精简隐藏细节规格，因为顶部对比表已全部支持且有阅读评测 */
-  }
-
-  .airport-card-actions {
-    flex-direction: row;
-    gap: 10px;
-    width: auto;
-    
-    .btn-action {
-      padding: 8px 16px;
-    }
-  }
-}
-
-@media (max-width: 480px) {
-  .airport-card-meta {
+  .airport-card-footer {
     flex-direction: column;
     align-items: stretch;
+    padding: 16px;
     gap: 16px;
   }
 
-  .airport-card-price-section {
-    justify-content: center;
+  .airport-card-spec {
+    flex-wrap: wrap;
+    gap: 10px 14px;
   }
 
   .airport-card-actions {
     width: 100%;
     .btn-action {
       flex: 1;
+      text-align: center;
     }
   }
 }
