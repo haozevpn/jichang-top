@@ -108,35 +108,27 @@
     margin-top: 1.5rem;
   }
 
-  /* 表格高级化设计 */
+  /* 表格：去除色块/阴影修饰，回归纯文字对齐排版 */
   table {
     width: 100%;
     border-collapse: collapse;
     margin: 1.5rem 0;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    font-size: 1rem;
 
     th {
-      background: var(--primary-gradient);
-      color: #ffffff;
       font-weight: 600;
-      padding: 12px 16px;
+      padding: 10px 12px;
       text-align: left;
+      border-bottom: 2px solid var(--card-border);
     }
 
     td {
-      padding: 12px 16px;
+      padding: 10px 12px;
       border-bottom: 1px solid var(--card-border);
-      background-color: var(--card-background);
     }
 
     tr:last-child td {
       border-bottom: none;
-    }
-    
-    tr:nth-child(even) td {
-      background-color: rgba(124, 58, 237, 0.02);
     }
   }
 
