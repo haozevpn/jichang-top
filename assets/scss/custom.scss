@@ -80,12 +80,19 @@
 
 /* 正文部分的美化，提升可读性 */
 .article-content {
-  font-size: 1.1rem !important;
-  line-height: 1.8 !important;
+  font-size: 1.25rem !important;
+  line-height: 1.85 !important;
   color: var(--card-text-color);
 
+  /* 去掉标题左侧紫色竖线（覆盖主题 --heading-border-size） */
+  h1, h2, h3, h4, h5, h6 {
+    border-inline-start: none !important;
+    border-left: none !important;
+    padding-inline-start: 0 !important;
+  }
+
   h2 {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     margin-top: 2rem;
     margin-bottom: 1rem;
     border-bottom: 2px solid var(--card-border);
@@ -104,7 +111,7 @@
   }
 
   h3 {
-    font-size: 1.3rem;
+    font-size: 1.45rem;
     margin-top: 1.5rem;
   }
 
@@ -113,17 +120,17 @@
     width: 100%;
     border-collapse: collapse;
     margin: 1.5rem 0;
-    font-size: 1rem;
+    font-size: 1.15rem;
 
     th {
       font-weight: 600;
-      padding: 10px 12px;
+      padding: 14px 16px;
       text-align: left;
       border-bottom: 2px solid var(--card-border);
     }
 
     td {
-      padding: 10px 12px;
+      padding: 14px 16px;
       border-bottom: 1px solid var(--card-border);
     }
 
@@ -147,14 +154,14 @@
     padding: 0 !important;
   }
 
-  /* 块引用 */
+  /* 块引用：去除左侧紫色竖线 */
   blockquote {
-    border-left: 4px solid var(--accent-color) !important;
+    border-left: none !important;
     background: rgba(124, 58, 237, 0.05) !important;
     padding: 16px 20px !important;
-    border-radius: 0 12px 12px 0 !important;
+    border-radius: 12px !important;
     margin: 1.5rem 0 !important;
-    
+
     p {
       margin: 0 !important;
       font-style: italic;
