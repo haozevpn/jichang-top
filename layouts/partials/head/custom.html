@@ -165,13 +165,14 @@
 {{- with .Params.image -}}
 <meta property="og:image" content="{{ . | absURL }}" />
 <meta name="twitter:image" content="{{ . | absURL }}" />
-{{- else if .Resources.GetMatch "cover.*" -}}
-  {{- $cover := .Resources.GetMatch "cover.*" -}}
-<meta property="og:image" content="{{ $cover.Permalink }}" />
-<meta name="twitter:image" content="{{ $cover.Permalink }}" />
 {{- else -}}
+  {{- with .Resources.GetMatch "cover.*" -}}
+<meta property="og:image" content="{{ .Permalink }}" />
+<meta name="twitter:image" content="{{ .Permalink }}" />
+  {{- else -}}
 <meta property="og:image" content="{{ $defaultImage | absURL }}" />
 <meta name="twitter:image" content="{{ $defaultImage | absURL }}" />
+  {{- end -}}
 {{- end -}}
 
 {{- /* Twitter Card */ -}}
