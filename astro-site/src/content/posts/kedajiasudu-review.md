@@ -105,6 +105,12 @@ categories: ["机场测评"]
 👉 **[立即前往 可达加速度 官网获取最新优惠订阅](https://1.mkd997.com/#/register?code=JgTY5JiT)**
 
 
+## 相关推荐
+
+- [2026年最新稳定机场推荐排行榜](/airport/)
+- [奈云机场测评](/p/naiyun-review/)
+- [隐云机场测评](/p/yinyun-review/)
+
 ## 常见问题
 
 <script type="application/ld+json">

@@ -105,6 +105,12 @@ categories: ["机场测评"]
 👉 **[立即前往 飞鸟机场 官网获取最新优惠订阅](https://bbb.jichang.best/#/register?code=o4I4kToe)**
 
 
+## 相关推荐
+
+- [2026年最新稳定机场推荐排行榜](/airport/)
+- [青云梯机场测评](/p/qingyunti-review/)
+- [花云机场测评](/p/huayun-review/)
+
 ## 常见问题
 
 <script type="application/ld+json">

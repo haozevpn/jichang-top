@@ -74,6 +74,12 @@ slug: "airport-multiple-devices-setup"
 总结下来，设备数问题的解决路径是：设备少就升套餐，设备多就考虑路由器方案。路由器方案一次配好，以后省心，家里所有设备都不用单独配置，是长期来看最值得投入的方案。
 
 
+## 推荐阅读
+
+- [2026年最新稳定机场推荐排行榜](/airport/)
+- [极连云测评 - IEPL专线首选](/p/jilianyun-review/)
+- [瞬云机场测评 - Anycast直连](/p/shunyun-review/)
+
 ## 常见问题
 
 <script type="application/ld+json">

@@ -105,6 +105,12 @@ categories: ["机场测评"]
 👉 **[立即前往 大哥云 官网获取最新优惠订阅](https://haoze.v2yunvipaff.com/#/?code=trJG2874)**
 
 
+## 相关推荐
+
+- [2026年最新稳定机场推荐排行榜](/airport/)
+- [龙猫云机场测评](/p/longmaoyun-review/)
+- [飞鸟机场机场测评](/p/feiniaojichang-review/)
+
 ## 常见问题
 
 <script type="application/ld+json">

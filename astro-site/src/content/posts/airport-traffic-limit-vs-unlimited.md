@@ -78,6 +78,12 @@ slug: "airport-traffic-limit-vs-unlimited"
 简单总结一下：月用量100G以内，按量套餐更省；超过150G或者使用很随意不想算流量，选不限量。买之前查清楚速率限制和高峰限速政策，年付要等机场证明了稳定性再考虑。
 
 
+## 推荐阅读
+
+- [2026年最新稳定机场推荐排行榜](/airport/)
+- [极连云测评 - IEPL专线首选](/p/jilianyun-review/)
+- [瞬云机场测评 - Anycast直连](/p/shunyun-review/)
+
 ## 常见问题
 
 <script type="application/ld+json">

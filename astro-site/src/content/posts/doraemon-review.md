@@ -105,6 +105,12 @@ categories: ["机场测评"]
 👉 **[立即前往 哆啦A梦 官网获取最新优惠订阅](https://store.yyds2-doraemon.site/login/register?invite_code=5VxQMw0k)**
 
 
+## 相关推荐
+
+- [2026年最新稳定机场推荐排行榜](/airport/)
+- [寰宇云机场测评](/p/huanyuyun-review/)
+- [瞬云机场机场测评](/p/shunyun-review/)
+
 ## 常见问题
 
 <script type="application/ld+json">

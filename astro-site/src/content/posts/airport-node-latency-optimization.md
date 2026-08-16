@@ -74,6 +74,12 @@ slug: "airport-node-latency-optimization"
 整体来说，延迟优化的优先级是：选对地区节点 > 规则模式分流 > 避开高峰期 > 客户端细节调整。前两步做好，大部分人的体验能提升一大截。
 
 
+## 推荐阅读
+
+- [2026年最新稳定机场推荐排行榜](/airport/)
+- [极连云测评 - IEPL专线首选](/p/jilianyun-review/)
+- [瞬云机场测评 - Anycast直连](/p/shunyun-review/)
+
 ## 常见问题
 
 <script type="application/ld+json">

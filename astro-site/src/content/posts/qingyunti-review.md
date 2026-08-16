@@ -105,6 +105,12 @@ categories: ["机场测评"]
 👉 **[立即前往 青云梯 官网获取最新优惠订阅](https://shanhai.sbs/#/register?code=qVTbPfWP)**
 
 
+## 相关推荐
+
+- [2026年最新稳定机场推荐排行榜](/airport/)
+- [花云机场测评](/p/huayun-review/)
+- [哆啦A梦机场测评](/p/doraemon-review/)
+
 ## 常见问题
 
 <script type="application/ld+json">

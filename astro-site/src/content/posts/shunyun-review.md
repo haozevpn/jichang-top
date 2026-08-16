@@ -105,6 +105,12 @@ categories: ["机场测评"]
 👉 **[立即前往 瞬云机场 官网获取最新优惠订阅](https://bbb.jichang.best/#/register?code=o4I4kToe)**
 
 
+## 相关推荐
+
+- [2026年最新稳定机场推荐排行榜](/airport/)
+- [极连云机场测评](/p/jilianyun-review/)
+- [光年梯机场测评](/p/guangnianti-review/)
+
 ## 常见问题
 
 <script type="application/ld+json">

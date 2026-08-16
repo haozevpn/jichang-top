@@ -105,6 +105,12 @@ categories: ["机场测评"]
 👉 **[立即前往 极连云 官网获取最新优惠订阅](https://haozevpn.jlyvipaff.com/#/?code=KUKfOY13)**
 
 
+## 相关推荐
+
+- [2026年最新稳定机场推荐排行榜](/airport/)
+- [光年梯机场测评](/p/guangnianti-review/)
+- [山水云机场测评](/p/shanshuiyun-review/)
+
 ## 常见问题
 
 <script type="application/ld+json">

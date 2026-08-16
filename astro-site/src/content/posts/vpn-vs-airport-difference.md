@@ -74,6 +74,12 @@ Shadowsocks的流量设计成随机加密数据，从外部看不出明显特征
 一句话总结：VPN是协议，机场是服务。在国内日常科学上网，用机场，别折腾传统VPN。
 
 
+## 推荐阅读
+
+- [2026年最新稳定机场推荐排行榜](/airport/)
+- [极连云测评 - IEPL专线首选](/p/jilianyun-review/)
+- [瞬云机场测评 - Anycast直连](/p/shunyun-review/)
+
 ## 常见问题
 
 <script type="application/ld+json">
