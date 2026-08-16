@@ -13,3 +13,21 @@ enableRobotsTXT        = true
     post = "/p/:slug/"
     page = "/:slug/"
 
+
+# Sitemap 配置
+[sitemap]
+  changefreq = "weekly"
+  filename = "sitemap.xml"
+  priority = 0.5
+
+[sitemap.page]
+  changefreq = "monthly"
+  priority = 0.6
+
+[sitemap.section]
+  changefreq = "weekly"
+  priority = 0.7
+
+[sitemap.home]
+  changefreq = "daily"
+  priority = 1.0

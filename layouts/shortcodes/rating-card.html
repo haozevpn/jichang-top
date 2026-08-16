@@ -1,0 +1,78 @@
+{{- /* 评分卡片 Shortcode - 用于评测文章顶部显示核心信息 */ -}}
+{{- /* 使用方式: {{< rating-card name="瞬云机场" rating="9.9" price="8.25" route="Anycast直连" unlimited="true" trial="false" >}} */ -}}
+
+{{- $name := .Get "name" -}}
+{{- $rating := .Get "rating" | default "9.0" -}}
+{{- $price := .Get "price" | default "10.00" -}}
+{{- $route := .Get "route" | default "中转线路" -}}
+{{- $unlimited := .Get "unlimited" | default "true" -}}
+{{- $trial := .Get "trial" | default "false" -}}
+
+<div class="rating-card" style="
+  background: linear-gradient(135deg, #7c3aed 0%, #2563eb 100%);
+  color: white;
+  border-radius: 16px;
+  padding: 2rem;
+  margin: 2rem 0;
+  box-shadow: 0 10px 30px rgba(124, 58, 237, 0.3);
+  position: relative;
+  overflow: hidden;
+">
+  <div style="position: relative; z-index: 2;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1.5rem;">
+      <div>
+        <h2 style="font-size: 2rem; margin: 0 0 0.5rem 0; color: white;">{{ $name }}</h2>
+        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+          <span style="font-size: 2.5rem; font-weight: 700; color: #fbbf24;">{{ $rating }}</span>
+          <span style="font-size: 1.2rem; opacity: 0.9;">/ 10.0</span>
+        </div>
+      </div>
+
+      <div style="text-align: right;">
+        <div style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 0.25rem;">起步价格</div>
+        <div style="font-size: 2rem; font-weight: 700; color: #fbbf24;">¥{{ $price }}</div>
+        <div style="font-size: 0.9rem; opacity: 0.9;">/ 月起</div>
+      </div>
+    </div>
+
+    <div style="
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.2);
+    ">
+      <div>
+        <div style="font-size: 0.85rem; opacity: 0.8; margin-bottom: 0.25rem;">线路类型</div>
+        <div style="font-size: 1.1rem; font-weight: 600;">{{ $route }}</div>
+      </div>
+
+      <div>
+        <div style="font-size: 0.85rem; opacity: 0.8; margin-bottom: 0.25rem;">不限时流量</div>
+        <div style="font-size: 1.1rem; font-weight: 600;">
+          {{ if eq $unlimited "true" }}✅ 支持{{ else }}❌ 不支持{{ end }}
+        </div>
+      </div>
+
+      <div>
+        <div style="font-size: 0.85rem; opacity: 0.8; margin-bottom: 0.25rem;">免费试用</div>
+        <div style="font-size: 1.1rem; font-weight: 600;">
+          {{ if eq $trial "true" }}✅ 有试用{{ else }}❌ 无{{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{- /* 装饰性背景图案 */ -}}
+  <div style="
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 1;
+  "></div>
+</div>

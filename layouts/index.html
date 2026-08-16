@@ -1,4 +1,7 @@
 {{ define "main" }}
+    {{- /* 插入首页英雄区块 */ -}}
+    {{- partial "hero-section.html" . -}}
+
     {{- $pages := where .Site.RegularPages "Type" "in" site.Params.mainSections -}}
     {{- $filtered := slice -}}
     {{- range $pages -}}

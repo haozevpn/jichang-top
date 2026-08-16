@@ -1,0 +1,84 @@
+{{- /* 相关机场推荐 Shortcode - 增加内部链接密度 */ -}}
+{{- /* 使用方式: {{< related-airports "瞬云机场,极连云,光年梯" >}} */ -}}
+
+{{- $names := split (.Get 0) "," -}}
+
+<div class="related-airports" style="
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.03) 0%, rgba(37, 99, 235, 0.03) 100%);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 0 12px 12px 0;
+  padding: 1.5rem;
+  margin: 2rem 0;
+">
+  <div style="
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  ">
+    <span style="font-size: 1.25rem;">🔗</span>
+    <h4 style="
+      font-size: 1.1rem;
+      margin: 0;
+      color: var(--card-text-color);
+      font-weight: 600;
+    ">相关推荐</h4>
+  </div>
+
+  <div style="
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  ">
+    {{- range $names -}}
+      {{- $name := . | strings.TrimSpace -}}
+      {{- $slug := $name | urlize -}}
+      <a href="/airport/#{{ $slug }}" style="
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.75rem 1rem;
+        background: var(--card-background);
+        border: 1px solid var(--card-border);
+        border-radius: 8px;
+        text-decoration: none;
+        color: var(--card-text-color);
+        transition: all 0.3s ease;
+      " onmouseover="this.style.borderColor='var(--accent-color)'; this.style.transform='translateX(4px)';"
+         onmouseout="this.style.borderColor='var(--card-border)'; this.style.transform='translateX(0)';">
+        <span style="
+          width: 32px;
+          height: 32px;
+          background: var(--accent-color);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: white;
+          font-weight: 600;
+          font-size: 0.9rem;
+          flex-shrink: 0;
+        ">✓</span>
+        <span style="
+          font-weight: 500;
+          font-size: 1rem;
+        ">{{ $name }}</span>
+        <span style="
+          margin-left: auto;
+          color: var(--accent-color);
+          font-size: 1.2rem;
+        ">→</span>
+      </a>
+    {{- end -}}
+  </div>
+
+  <div style="
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--card-border);
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+  ">
+    💡 查看更多机场对比请访问 <a href="/airport/" style="color: var(--accent-color); font-weight: 500;">机场推荐页</a>
+  </div>
+</div>

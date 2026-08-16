@@ -8,6 +8,8 @@ slug: "airport"
 
 我们长期自费订购并深度测试了以下机场服务。所有机场均支持多协议、多客户端订阅，解锁大部分流媒体与AI软件，请根据预算及线路偏好选择购买。新手建议先按月订阅进行测试。
 
+{{< newbie-guide >}}
+
 <div class="airport-seo-intro" style="margin-bottom: 2.5rem; padding: 1.25rem 1.5rem; border: 1px solid var(--card-border); border-radius: 12px; background-color: var(--card-background); box-shadow: 0 4px 6px rgba(0,0,0,0.02);">
   <h2 style="font-size: 1.2rem; margin-top: 0; margin-bottom: 0.75rem; border-left: 4px solid var(--accent-color); padding-left: 0.75rem;">💡 2026年科学上网机场与稳定梯子推荐指南</h2>
   <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.7; margin: 0;">
@@ -16,6 +18,8 @@ slug: "airport"
 </div>
 
 ## 🏆 2026核心机场关键参数对比表格
+
+{{< filter-tags >}}
 
 | 排名 | 机场名称 | 线路类型 | 起步价格 | 不限时流量 | 官网注册通道 |
 | :---: | :--- | :---: | :---: | :---: | :---: |

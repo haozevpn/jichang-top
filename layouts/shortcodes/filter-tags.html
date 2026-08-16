@@ -1,0 +1,152 @@
+{{- /* 筛选标签组件 - 用于机场推荐页快速筛选 */ -}}
+{{- /* 使用方式: {{< filter-tags >}} */ -}}
+
+<div class="filter-tags-wrapper" style="margin: 2rem 0;">
+  <div style="
+    background: var(--card-background);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  ">
+    <div style="
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    ">
+      <span style="font-size: 1.25rem;">🔍</span>
+      <h3 style="
+        font-size: 1.1rem;
+        margin: 0;
+        font-weight: 600;
+        color: var(--card-text-color);
+      ">按线路类型筛选</h3>
+    </div>
+
+    <div style="
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    " id="filterButtons">
+      <button class="filter-btn" data-filter="all" style="
+        padding: 0.625rem 1.25rem;
+        border-radius: 999px;
+        border: 2px solid var(--accent-color);
+        background: var(--accent-color);
+        color: white;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 0.95rem;
+      ">全部机场</button>
+
+      <button class="filter-btn" data-filter="IEPL" style="
+        padding: 0.625rem 1.25rem;
+        border-radius: 999px;
+        border: 2px solid var(--card-border);
+        background: transparent;
+        color: var(--card-text-color);
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 0.95rem;
+      ">IEPL专线</button>
+
+      <button class="filter-btn" data-filter="IPLC" style="
+        padding: 0.625rem 1.25rem;
+        border-radius: 999px;
+        border: 2px solid var(--card-border);
+        background: transparent;
+        color: var(--card-text-color);
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 0.95rem;
+      ">IPLC专线</button>
+
+      <button class="filter-btn" data-filter="BGP" style="
+        padding: 0.625rem 1.25rem;
+        border-radius: 999px;
+        border: 2px solid var(--card-border);
+        background: transparent;
+        color: var(--card-text-color);
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 0.95rem;
+      ">BGP中转</button>
+
+      <button class="filter-btn" data-filter="Anycast" style="
+        padding: 0.625rem 1.25rem;
+        border-radius: 999px;
+        border: 2px solid var(--card-border);
+        background: transparent;
+        color: var(--card-text-color);
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 0.95rem;
+      ">Anycast直连</button>
+
+      <button class="filter-btn" data-filter="直连" style="
+        padding: 0.625rem 1.25rem;
+        border-radius: 999px;
+        border: 2px solid var(--card-border);
+        background: transparent;
+        color: var(--card-text-color);
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 0.95rem;
+      ">直连公网</button>
+    </div>
+
+    <div style="
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--card-border);
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    ">
+      💡 点击标签快速筛选，表格内容会自动过滤显示
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  const buttons = document.querySelectorAll('.filter-btn');
+  const tableRows = document.querySelectorAll('table tbody tr');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', function() {
+      // 更新按钮样式
+      buttons.forEach(b => {
+        b.style.background = 'transparent';
+        b.style.color = 'var(--card-text-color)';
+        b.style.borderColor = 'var(--card-border)';
+      });
+      this.style.background = 'var(--accent-color)';
+      this.style.color = 'white';
+      this.style.borderColor = 'var(--accent-color)';
+
+      const filter = this.dataset.filter;
+
+      // 筛选表格行
+      tableRows.forEach(row => {
+        if (filter === 'all') {
+          row.style.display = '';
+        } else {
+          const routeText = row.cells[2]?.textContent || '';
+          if (routeText.includes(filter)) {
+            row.style.display = '';
+          } else {
+            row.style.display = 'none';
+          }
+        }
+      });
+    });
+  });
+})();
+</script>

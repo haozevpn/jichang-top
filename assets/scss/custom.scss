@@ -80,7 +80,7 @@
 
 /* 正文部分的美化，提升可读性 */
 .article-content {
-  font-size: 1.25rem !important;
+  font-size: 1.4rem !important;
   line-height: 1.85 !important;
   color: var(--card-text-color);
 
@@ -92,7 +92,7 @@
   }
 
   h2 {
-    font-size: 1.8rem;
+    font-size: 2rem;
     margin-top: 2rem;
     margin-bottom: 1rem;
     border-bottom: 2px solid var(--card-border);
@@ -111,32 +111,52 @@
   }
 
   h3 {
-    font-size: 1.45rem;
+    font-size: 1.6rem;
     margin-top: 1.5rem;
   }
 
-  /* 表格：去除色块/阴影修饰，回归纯文字对齐排版 */
+  h4 {
+    font-size: 1.4rem;
+  }
+
+  /* 表格：去除色块/阴影修饰，回归纯文字对齐排版 - 字号放大 */
   table {
     width: 100%;
     border-collapse: collapse;
     margin: 1.5rem 0;
-    font-size: 1.15rem;
+    font-size: 1.25rem;
 
     th {
       font-weight: 600;
-      padding: 14px 16px;
+      padding: 16px 18px;
       text-align: left;
       border-bottom: 2px solid var(--card-border);
+      font-size: 1.3rem;
     }
 
     td {
-      padding: 14px 16px;
+      padding: 16px 18px;
       border-bottom: 1px solid var(--card-border);
     }
 
     tr:last-child td {
       border-bottom: none;
     }
+  }
+
+  /* 列表项字号放大 */
+  ul, ol {
+    font-size: 1.3rem;
+
+    li {
+      margin-bottom: 0.6rem;
+    }
+  }
+
+  /* 段落 */
+  p {
+    margin-bottom: 1.5rem;
+    font-size: 1.35rem;
   }
 
   /* 行内代码与代码块 */
