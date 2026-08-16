@@ -74,3 +74,49 @@ OpenAI的风控不是看IP是不是美国，而是看IP是不是"真实用户IP"
 ---
 
 核心逻辑就是：ChatGPT的风控认的是IP质量，不是机场牌子。选对节点——原生IP或者家宽节点——比换机场更有用。
+
+
+## 常见问题
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "机场和VPN哪个好用？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "在国内环境下，机场比传统VPN更稳定。机场使用的协议（Shadowsocks、Trojan等）专门设计用于对抗检测，连接成功率更高。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "机场会被封吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "节点IP可能被封，但优质机场会快速补充新节点。建议选择有持续维护能力的机场，并准备备用机场。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "新手怎么选机场？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "优先选择运营时间长、口碑好的机场，建议月付避免跑路风险，查看是否支持主流客户端和流媒体解锁。"
+      }
+    }
+  ]
+}
+</script>
+
+**Q: 机场和VPN哪个好用？**
+A: 在国内环境下，机场比传统VPN更稳定。机场使用的协议（Shadowsocks、Trojan等）专门设计用于对抗检测，连接成功率更高。
+
+**Q: 机场会被封吗？**
+A: 节点IP可能被封，但优质机场会快速补充新节点。建议选择有持续维护能力的机场，并准备备用机场。
+
+**Q: 新手怎么选机场？**
+A: 优先选择运营时间长、口碑好的机场，建议月付避免跑路风险，查看是否支持主流客户端和流媒体解锁。
+
