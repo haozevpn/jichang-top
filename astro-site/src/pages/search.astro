@@ -1,0 +1,22 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+<MainLayout title="搜索 - 机场TOP" description="搜索站内文章">
+  <div class="max-w-4xl mx-auto px-6 py-16">
+    <h1 class="text-4xl font-serif mb-8 text-center">
+      站内<span class="italic text-[var(--color-accent)]">搜索</span>
+    </h1>
+    <div id="search"></div>
+  </div>
+</MainLayout>
+
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
+<script is:inline>
+  window.addEventListener('DOMContentLoaded', () => {
+    import('/pagefind/pagefind-ui.js').then(({ PagefindUI }) => {
+      new PagefindUI({ element: '#search', showSubResults: true });
+    }).catch(() => {
+      document.getElementById('search').innerHTML = '<p style="color:#888">搜索索引尚未生成，请先运行 npm run build。</p>';
+    });
+  });
+</script>

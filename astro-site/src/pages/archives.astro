@@ -1,0 +1,99 @@
+---
+import { getCollection } from 'astro:content';
+import MainLayout from '../layouts/MainLayout.astro';
+
+const allPosts = await getCollection('posts', ({ data }) => !data.draft);
+
+// 按年份分组
+const postsByYear = allPosts
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .reduce((acc, post) => {
+    const year = post.data.date.getFullYear();
+    if (!acc[year]) {
+      acc[year] = [];
+    }
+    acc[year].push(post);
+    return acc;
+  }, {} as Record<number, typeof allPosts>);
+
+const years = Object.keys(postsByYear).map(Number).sort((a, b) => b - a);
+
+function formatDate(date: Date) {
+  return new Intl.DateTimeFormat('zh-CN', {
+    month: 'long',
+    day: 'numeric'
+  }).format(date);
+}
+---
+
+<MainLayout
+  title="文章归档 - 机场TOP"
+  description="浏览所有已发布的文章"
+>
+  <div class="max-w-5xl mx-auto px-6 py-16">
+    <!-- Header -->
+    <div class="mb-12 text-center">
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">
+        文章<span class="italic text-[var(--color-accent)]">归档</span>
+      </h1>
+      <p class="text-lg text-[var(--color-muted)]">
+        共 {allPosts.length} 篇文章
+      </p>
+    </div>
+
+    <!-- Posts by Year -->
+    <div class="space-y-12">
+      {years.map(year => (
+        <div>
+          <h2 class="text-3xl font-serif mb-6 pb-3 border-b-2 border-[var(--color-warm-border)]">
+            {year}
+            <span class="text-lg text-[var(--color-muted)] ml-3">
+              ({postsByYear[year].length} 篇)
+            </span>
+          </h2>
+
+          <div class="space-y-4">
+            {postsByYear[year].map(post => (
+              <article class="flex items-start gap-6 p-4 rounded-lg hover:bg-[var(--color-surface)] transition-colors">
+                <time class="text-sm text-[var(--color-muted)] font-medium min-w-[80px] pt-1">
+                  {formatDate(post.data.date)}
+                </time>
+
+                <div class="flex-1">
+                  <h3 class="text-xl font-serif mb-2">
+                    <a
+                      href={`/p/${post.data.slug || post.slug}`}
+                      class="text-[var(--color-ink)] hover:text-[var(--color-accent)] no-underline transition-colors"
+                    >
+                      {post.data.title}
+                    </a>
+                  </h3>
+
+                  <div class="flex flex-wrap gap-2">
+                    {post.data.categories.map(cat => (
+                      <a
+                        href={`/categories/${cat}`}
+                        class="text-xs px-2 py-1 bg-[var(--color-accent-tint)] text-[var(--color-accent)] rounded no-underline hover:bg-[var(--color-accent)] hover:text-white transition-colors"
+                      >
+                        {cat}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+
+                {post.data.rating && (
+                  <div class="text-right min-w-[60px]">
+                    <div class="text-xl font-bold text-[var(--color-accent)]">
+                      {post.data.rating.toFixed(1)}
+                    </div>
+                    <div class="text-xs text-[var(--color-muted)]">★</div>
+                  </div>
+                )}
+              </article>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</MainLayout>

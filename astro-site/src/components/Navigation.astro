@@ -1,0 +1,81 @@
+---
+const navItems = [
+  { name: '首页', href: '/' },
+  { name: '机场推荐', href: '/airport' },
+  { name: '机场测评', href: '/categories/机场测评' },
+  { name: '科学上网指南', href: '/categories/科学上网指南' },
+  { name: '关于', href: '/about' },
+  { name: '搜索', href: '/search' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<nav class="sticky top-0 z-50 backdrop-blur-md bg-warm-bg/90 border-b border-[var(--color-warm-border)]">
+  <div class="max-w-5xl mx-auto px-6 py-4">
+    <div class="flex items-center justify-between">
+      <!-- Logo -->
+      <a href="/" class="text-2xl font-serif font-semibold no-underline hover:no-underline">
+        <span class="text-[var(--color-ink)]">机场</span><span class="italic text-[var(--color-accent)]">TOP</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <ul class="hidden md:flex items-center gap-8">
+        {navItems.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class={`text-base no-underline transition-colors ${
+                currentPath === item.href || currentPath.startsWith(item.href + '/')
+                  ? 'text-[var(--color-accent)] font-medium'
+                  : 'text-[var(--color-muted)] hover:text-[var(--color-ink)]'
+              }`}
+            >
+              {item.name}
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <!-- Mobile Menu Button -->
+      <button
+        id="mobile-menu-btn"
+        class="md:hidden p-2 text-[var(--color-ink)]"
+        aria-label="Toggle menu"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden mt-4 pb-2">
+      <ul class="flex flex-col gap-3">
+        {navItems.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class={`block py-2 text-base no-underline transition-colors ${
+                currentPath === item.href || currentPath.startsWith(item.href + '/')
+                  ? 'text-[var(--color-accent)] font-medium'
+                  : 'text-[var(--color-muted)]'
+              }`}
+            >
+              {item.name}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuBtn?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+</script>

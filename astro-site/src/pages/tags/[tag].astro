@@ -1,0 +1,103 @@
+---
+import { getCollection } from 'astro:content';
+import MainLayout from '../../layouts/MainLayout.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts', ({ data }) => !data.draft);
+
+  // 获取所有标签
+  const tags = [...new Set(posts.flatMap(post => post.data.tags))];
+
+  return tags.map(tag => {
+    const filteredPosts = posts
+      .filter(post => post.data.tags.includes(tag))
+      .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+    return {
+      params: { tag },
+      props: { tag, posts: filteredPosts }
+    };
+  });
+}
+
+const { tag, posts } = Astro.props;
+
+function formatDate(date: Date) {
+  return new Intl.DateTimeFormat('zh-CN', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  }).format(date);
+}
+---
+
+<MainLayout
+  title={`标签: ${tag} - 机场TOP`}
+  description={`浏览所有带有 ${tag} 标签的文章`}
+>
+  <div class="max-w-5xl mx-auto px-6 py-16">
+    <!-- Header -->
+    <div class="mb-12 text-center">
+      <div class="inline-block px-4 py-2 bg-[var(--color-accent-tint)] text-[var(--color-accent)] rounded-full mb-4">
+        标签
+      </div>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">
+        #{tag}
+      </h1>
+      <p class="text-lg text-[var(--color-muted)]">
+        共 {posts.length} 篇文章
+      </p>
+    </div>
+
+    <!-- Posts Grid -->
+    <div class="grid gap-8">
+      {posts.map((post) => (
+        <article class="card p-6">
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+            <div class="flex-1">
+              <div class="flex items-center gap-3 mb-3">
+                {post.data.categories.map((cat) => (
+                  <a
+                    href={`/categories/${cat}`}
+                    class="text-xs px-3 py-1 bg-[var(--color-accent-tint)] text-[var(--color-accent)] rounded-full no-underline hover:bg-[var(--color-accent)] hover:text-white transition-colors"
+                  >
+                    {cat}
+                  </a>
+                ))}
+                <time class="text-sm text-[var(--color-muted)]">
+                  {formatDate(post.data.date)}
+                </time>
+              </div>
+
+              <h2 class="text-2xl font-serif mb-3">
+                <a
+                  href={`/p/${post.data.slug || post.slug}`}
+                  class="text-[var(--color-ink)] hover:text-[var(--color-accent)] no-underline transition-colors"
+                >
+                  {post.data.title}
+                </a>
+              </h2>
+
+              {post.data.description && (
+                <p class="text-[var(--color-muted)] mb-3 leading-relaxed">
+                  {post.data.description}
+                </p>
+              )}
+            </div>
+
+            {post.data.rating && (
+              <div class="flex items-center justify-center md:justify-end">
+                <div class="text-center px-6 py-3 bg-[var(--color-accent-tint)] rounded-lg">
+                  <div class="text-3xl font-bold text-[var(--color-accent)]">
+                    {post.data.rating.toFixed(1)}
+                  </div>
+                  <div class="text-xs text-[var(--color-muted)]">评分</div>
+                </div>
+              </div>
+            )}
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</MainLayout>

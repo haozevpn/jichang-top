@@ -1,0 +1,27 @@
+User-agent: *
+Allow: /
+
+# 主站点地图
+Sitemap: https://jichang-top.com/sitemap.xml
+
+# 允许所有搜索引擎爬取
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: Sogou spider
+Allow: /
+
+# 禁止爬取搜索页面和标签页面的分页
+Disallow: /search/
+Disallow: /page/
+Disallow: /tags/page/
+Disallow: /categories/page/
+
+# 爬取频率建议
+Crawl-delay: 1

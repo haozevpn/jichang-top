@@ -1,0 +1,51 @@
+---
+const steps = [
+  {
+    number: 1,
+    title: '选择机场',
+    description: '从下方推荐列表选择适合自己的机场服务，建议新手优先选择支持试用的机场',
+    icon: '🎯'
+  },
+  {
+    number: 2,
+    title: '注册购买',
+    description: '点击官网链接注册账号，根据需求选择合适套餐，建议首次按月购买测试',
+    icon: '💳'
+  },
+  {
+    number: 3,
+    title: '下载客户端',
+    description: '根据设备系统下载对应客户端：Clash/Shadowrocket/V2rayN/Sing-box',
+    icon: '📱'
+  },
+  {
+    number: 4,
+    title: '导入订阅',
+    description: '复制机场提供的订阅链接，粘贴到客户端中，一键更新节点即可使用',
+    icon: '🚀'
+  }
+];
+---
+
+<div class="newbie-guide card p-8 mb-10 bg-gradient-to-br from-[var(--color-accent-tint)] to-[var(--color-surface)]">
+  <h2 class="text-2xl font-serif mb-6 text-center">
+    新手<span class="italic text-[var(--color-accent)]">快速上手</span>指南
+  </h2>
+
+  <div class="grid md:grid-cols-4 gap-6">
+    {steps.map((step) => (
+      <div class="text-center">
+        <div class="w-16 h-16 mx-auto mb-4 bg-white rounded-full flex items-center justify-center text-3xl shadow-md">
+          {step.icon}
+        </div>
+        <div class="mb-2">
+          <span class="inline-block w-8 h-8 bg-[var(--color-accent)] text-white rounded-full text-sm font-bold flex items-center justify-center">
+            {step.number}
+          </span>
+        </div>
+        <h3 class="font-semibold text-lg mb-2">{step.title}</h3>
+        <p class="text-sm text-[var(--color-muted)] leading-relaxed">{step.description}</p>
+      </div>
+    ))}
+  </div>
+</div>

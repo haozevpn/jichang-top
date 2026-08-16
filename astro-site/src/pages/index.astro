@@ -1,0 +1,134 @@
+---
+import { getCollection } from 'astro:content';
+import MainLayout from '../layouts/MainLayout.astro';
+
+// 获取所有文章并排序
+const allPosts = await getCollection('posts', ({ data }) => {
+  return !data.draft;
+});
+
+// 按日期排序
+const sortedPosts = allPosts.sort((a, b) =>
+  b.data.date.valueOf() - a.data.date.valueOf()
+);
+
+// 首页只显示最新 10 篇
+const latestPosts = sortedPosts.slice(0, 10);
+
+// 格式化日期
+function formatDate(date: Date) {
+  return new Intl.DateTimeFormat('zh-CN', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  }).format(date);
+}
+---
+
+<MainLayout
+  title="机场TOP - 专业的机场评测与科学上网指南"
+  description="提供最新、最全面的机场评测，帮助您选择最适合的科学上网服务"
+>
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-br from-[var(--color-surface)] to-[var(--color-warm-bg)] py-20 border-b border-[var(--color-warm-border)]">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <!-- Eyebrow -->
+      <div class="inline-block mb-6 px-4 py-2 bg-[var(--color-accent-tint)] text-[var(--color-accent)] text-sm font-medium rounded-full">
+        ✨ 专业评测，值得信赖
+      </div>
+
+      <!-- Headline -->
+      <h1 class="text-5xl md:text-6xl font-serif mb-6 leading-tight">
+        找到<span class="italic text-[var(--color-accent)]">最适合</span>你的机场
+      </h1>
+
+      <p class="text-xl md:text-2xl text-[var(--color-muted)] mb-10 max-w-2xl mx-auto font-light">
+        基于真实测试的机场评测，帮助你快速选择稳定、高速的科学上网服务
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/airport" class="btn-primary">
+          查看机场推荐 →
+        </a>
+        <a href="/categories/科学上网指南" class="btn-secondary">
+          新手指南
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest Posts -->
+  <section class="max-w-5xl mx-auto px-6 py-16">
+    <h2 class="text-3xl font-serif mb-8">
+      最新<span class="italic text-[var(--color-accent)]">文章</span>
+    </h2>
+
+    <div class="grid gap-8">
+      {latestPosts.map((post) => (
+        <article class="card p-6">
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+            <div class="flex-1">
+              <div class="flex items-center gap-3 mb-3">
+                {post.data.categories.map((cat) => (
+                  <span class="text-xs px-3 py-1 bg-[var(--color-accent-tint)] text-[var(--color-accent)] rounded-full">
+                    {cat}
+                  </span>
+                ))}
+                <time class="text-sm text-[var(--color-muted)]">
+                  {formatDate(post.data.date)}
+                </time>
+              </div>
+
+              <h3 class="text-2xl font-serif mb-2">
+                <a
+                  href={`/p/${post.data.slug || post.slug}`}
+                  class="text-[var(--color-ink)] hover:text-[var(--color-accent)] no-underline transition-colors"
+                >
+                  {post.data.title}
+                </a>
+              </h3>
+
+              {post.data.description && (
+                <p class="text-[var(--color-muted)] line-clamp-2">
+                  {post.data.description}
+                </p>
+              )}
+
+              {post.data.tags.length > 0 && (
+                <div class="flex flex-wrap gap-2 mt-3">
+                  {post.data.tags.slice(0, 3).map((tag) => (
+                    <a
+                      href={`/tags/${tag}`}
+                      class="text-xs text-[var(--color-muted)] hover:text-[var(--color-accent)] no-underline"
+                    >
+                      #{tag}
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {post.data.rating && (
+              <div class="flex items-center justify-center md:justify-end">
+                <div class="text-center px-6 py-3 bg-[var(--color-accent-tint)] rounded-lg">
+                  <div class="text-3xl font-bold text-[var(--color-accent)]">
+                    {post.data.rating.toFixed(1)}
+                  </div>
+                  <div class="text-xs text-[var(--color-muted)]">综合评分</div>
+                </div>
+              </div>
+            )}
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <!-- View All Link -->
+    <div class="text-center mt-12">
+      <a href="/archives" class="btn-primary">
+        查看全部文章 →
+      </a>
+    </div>
+  </section>
+</MainLayout>

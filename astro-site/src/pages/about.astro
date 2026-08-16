@@ -1,0 +1,114 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout
+  title="关于本站 - 机场TOP"
+  description="了解机场TOP - 专业的机场评测与科学上网指南"
+>
+  <div class="max-w-4xl mx-auto px-6 py-16">
+    <article class="prose prose-lg max-w-none">
+      <!-- Header -->
+      <div class="text-center mb-12">
+        <h1 class="text-4xl md:text-5xl font-serif mb-4">
+          关于<span class="italic text-[var(--color-accent)]">本站</span>
+        </h1>
+        <p class="text-xl text-[var(--color-muted)] font-light">
+          专业、客观、真实的机场评测平台
+        </p>
+      </div>
+
+      <!-- Content -->
+      <div class="card p-8 space-y-8">
+        <section>
+          <h2 class="text-2xl font-serif mb-4 border-l-4 border-[var(--color-accent)] pl-4">
+            👋 欢迎来到机场TOP
+          </h2>
+          <p class="text-[var(--color-muted)] leading-relaxed">
+            机场TOP 是一个专注于科学上网工具评测的独立博客。我们通过真实购买、长期使用、深度测试的方式，为用户提供客观、详实的机场服务评测报告。
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-serif mb-4 border-l-4 border-[var(--color-accent)] pl-4">
+            🎯 我们的使命
+          </h2>
+          <ul class="space-y-3 text-[var(--color-muted)]">
+            <li>✅ 帮助用户找到真正稳定、高速、性价比高的机场服务</li>
+            <li>✅ 揭露不良机场的套路，避免用户踩坑</li>
+            <li>✅ 分享科学上网的技术知识和最佳实践</li>
+            <li>✅ 保持独立、客观、真实的评测态度</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-serif mb-4 border-l-4 border-[var(--color-accent)] pl-4">
+            📊 评测方法
+          </h2>
+          <p class="text-[var(--color-muted)] leading-relaxed mb-4">
+            我们的评测基于以下维度：
+          </p>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-[var(--color-surface)] p-4 rounded-lg">
+              <h3 class="font-semibold mb-2">⚡ 速度测试</h3>
+              <p class="text-sm text-[var(--color-muted)]">
+                多时段、多节点的真实速度测试，包括晚高峰表现
+              </p>
+            </div>
+            <div class="bg-[var(--color-surface)] p-4 rounded-lg">
+              <h3 class="font-semibold mb-2">🔒 稳定性</h3>
+              <p class="text-sm text-[var(--color-muted)]">
+                长期跟踪服务可用率、掉线频率、维护情况
+              </p>
+            </div>
+            <div class="bg-[var(--color-surface)] p-4 rounded-lg">
+              <h3 class="font-semibold mb-2">💰 性价比</h3>
+              <p class="text-sm text-[var(--color-muted)]">
+                综合价格、流量、节点质量的性价比分析
+              </p>
+            </div>
+            <div class="bg-[var(--color-surface)] p-4 rounded-lg">
+              <h3 class="font-semibold mb-2">🎬 解锁能力</h3>
+              <p class="text-sm text-[var(--color-muted)]">
+                测试 Netflix、ChatGPT、TikTok 等服务的解锁情况
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-serif mb-4 border-l-4 border-[var(--color-accent)] pl-4">
+            ⚠️ 免责声明
+          </h2>
+          <div class="bg-yellow-50 border border-yellow-200 p-4 rounded-lg">
+            <ul class="space-y-2 text-sm text-gray-700">
+              <li>• 本站所有评测均基于测试时的真实体验，机场服务可能随时变化</li>
+              <li>• 建议用户首次购买时选择月付套餐进行测试</li>
+              <li>• 机场服务存在政策风险，请合理使用</li>
+              <li>• 本站为独立评测平台，与任何机场无利益关系</li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-serif mb-4 border-l-4 border-[var(--color-accent)] pl-4">
+            📮 联系我们
+          </h2>
+          <p class="text-[var(--color-muted)] leading-relaxed">
+            如果您有任何问题、建议或合作意向，欢迎通过以下方式联系我们：
+          </p>
+          <div class="mt-4 space-y-2 text-[var(--color-muted)]">
+            <p>📧 Email: <a href="mailto:contact@jichang-top.com" class="text-[var(--color-accent)] hover:underline">contact@jichang-top.com</a></p>
+            <p>💬 反馈建议：欢迎在文章下方评论区留言</p>
+          </div>
+        </section>
+
+        <section class="text-center pt-8 border-t border-[var(--color-warm-border)]">
+          <p class="text-[var(--color-muted)] italic">
+            "找到最适合你的机场，安全、稳定地连接世界"
+          </p>
+        </section>
+      </div>
+    </article>
+  </div>
+</MainLayout>

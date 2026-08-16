@@ -1,0 +1,149 @@
+---
+import { getCollection, render } from 'astro:content';
+import MainLayout from '../../layouts/MainLayout.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts', ({ data }) => !data.draft);
+
+  return posts.map((post) => ({
+    params: { slug: post.data.slug || post.id.replace(/\.md$/, '') },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+// 格式化日期
+function formatDate(date: Date) {
+  return new Intl.DateTimeFormat('zh-CN', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  }).format(date);
+}
+---
+
+<MainLayout
+  title={post.data.title}
+  description={post.data.description}
+  image={post.data.image}
+>
+  <article class="max-w-4xl mx-auto px-6 py-16">
+    <!-- Meta -->
+    <div class="mb-6 flex flex-wrap items-center gap-4">
+      {post.data.categories.map((cat) => (
+        <a
+          href={`/categories/${cat}`}
+          class="text-sm px-4 py-1.5 bg-[var(--color-accent-tint)] text-[var(--color-accent)] rounded-full no-underline hover:bg-[var(--color-accent)] hover:text-white transition-colors"
+        >
+          {cat}
+        </a>
+      ))}
+      <time class="text-sm text-[var(--color-muted)]">
+        发布于 {formatDate(post.data.date)}
+      </time>
+      {post.data.lastmod && post.data.lastmod > post.data.date && (
+        <span class="text-sm text-[var(--color-muted)]">
+          · 更新于 {formatDate(post.data.lastmod)}
+        </span>
+      )}
+    </div>
+
+    <!-- Title -->
+    <h1 class="text-4xl md:text-5xl font-serif mb-6 leading-tight">
+      {post.data.title}
+    </h1>
+
+    <!-- Description -->
+    {post.data.description && (
+      <p class="text-xl text-[var(--color-muted)] mb-8 font-light leading-relaxed">
+        {post.data.description}
+      </p>
+    )}
+
+    <!-- Rating Card (if exists) -->
+    {post.data.rating && (
+      <div class="card p-6 mb-10 bg-gradient-to-br from-[var(--color-surface)] to-[var(--color-surface-white)]">
+        <h2 class="text-lg font-serif mb-4">综合评分</h2>
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+          <div class="text-center">
+            <div class="text-3xl font-bold text-[var(--color-accent)] mb-1">
+              {post.data.rating.toFixed(1)}
+            </div>
+            <div class="text-xs text-[var(--color-muted)]">总分</div>
+          </div>
+          {post.data.speed && (
+            <div class="text-center">
+              <div class="text-2xl font-semibold text-[var(--color-ink)] mb-1">
+                {post.data.speed.toFixed(1)}
+              </div>
+              <div class="text-xs text-[var(--color-muted)]">速度</div>
+            </div>
+          )}
+          {post.data.stability && (
+            <div class="text-center">
+              <div class="text-2xl font-semibold text-[var(--color-ink)] mb-1">
+                {post.data.stability.toFixed(1)}
+              </div>
+              <div class="text-xs text-[var(--color-muted)]">稳定性</div>
+            </div>
+          )}
+          {post.data.service && (
+            <div class="text-center">
+              <div class="text-2xl font-semibold text-[var(--color-ink)] mb-1">
+                {post.data.service.toFixed(1)}
+              </div>
+              <div class="text-xs text-[var(--color-muted)]">客服</div>
+            </div>
+          )}
+          {post.data.price && (
+            <div class="text-center">
+              <div class="text-2xl font-semibold text-[var(--color-ink)] mb-1">
+                {post.data.price.toFixed(1)}
+              </div>
+              <div class="text-xs text-[var(--color-muted)]">性价比</div>
+            </div>
+          )}
+        </div>
+      </div>
+    )}
+
+    <!-- Content -->
+    <div class="prose prose-lg max-w-none
+      prose-headings:font-serif prose-headings:font-normal
+      prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6
+      prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-4
+      prose-p:text-lg prose-p:leading-relaxed prose-p:mb-6
+      prose-a:text-[var(--color-accent)] prose-a:no-underline hover:prose-a:text-[var(--color-accent-hover)]
+      prose-strong:text-[var(--color-ink)] prose-strong:font-medium
+      prose-ul:my-6 prose-ol:my-6
+      prose-li:text-lg prose-li:leading-relaxed
+      prose-img:rounded-lg prose-img:shadow-lg
+      prose-code:text-[var(--color-accent)] prose-code:bg-[var(--color-accent-tint)] prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded
+      prose-pre:bg-[var(--color-charcoal)] prose-pre:text-gray-100
+      prose-blockquote:border-l-4 prose-blockquote:border-[var(--color-accent)] prose-blockquote:pl-6 prose-blockquote:italic
+      prose-table:border prose-table:border-[var(--color-warm-border)]
+      prose-th:bg-[var(--color-surface)] prose-th:border prose-th:border-[var(--color-warm-border)] prose-th:px-4 prose-th:py-2
+      prose-td:border prose-td:border-[var(--color-warm-border)] prose-td:px-4 prose-td:py-2
+    ">
+      <Content />
+    </div>
+
+    <!-- Tags -->
+    {post.data.tags.length > 0 && (
+      <div class="mt-12 pt-8 border-t border-[var(--color-warm-border)]">
+        <div class="flex flex-wrap gap-3">
+          {post.data.tags.map((tag) => (
+            <a
+              href={`/tags/${tag}`}
+              class="text-sm px-4 py-2 bg-[var(--color-surface)] border border-[var(--color-warm-border)] rounded-full no-underline text-[var(--color-muted)] hover:text-[var(--color-accent)] hover:border-[var(--color-accent)] transition-colors"
+            >
+              #{tag}
+            </a>
+          ))}
+        </div>
+      </div>
+    )}
+  </article>
+</MainLayout>

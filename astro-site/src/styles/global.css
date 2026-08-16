@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+/* 暖色调设计系统（Design Sense） */
+@theme {
+  /* 背景色 */
+  --color-warm-bg: #F7F4EF;
+  --color-surface: #FBF9F5;
+  --color-surface-white: #FFFFFF;
+
+  /* 边框与分隔 */
+  --color-warm-border: #E7E1D7;
+
+  /* 文字色 */
+  --color-ink: #1F2421;
+  --color-muted: #5C635D;
+
+  /* 强调色（Terracotta 赤土色）*/
+  --color-accent: #C4612F;
+  --color-accent-hover: #A94E22;
+  --color-accent-tint: #F2E3D6;
+
+  /* 深色区块 */
+  --color-charcoal: #1F2421;
+
+  /* 字体 */
+  --font-family-serif: Fraunces, ui-serif, Georgia, serif;
+  --font-family-sans: Inter, ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-warm-bg);
+    color: var(--color-ink);
+    font-family: var(--font-family-sans);
+    font-size: 18px;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-serif);
+    letter-spacing: -0.02em;
+    font-weight: 400;
+  }
+
+  a {
+    color: var(--color-accent);
+    transition: color 0.2s;
+  }
+
+  a:hover {
+    color: var(--color-accent-hover);
+  }
+}
+
+@layer components {
+  .btn-primary {
+    background-color: var(--color-accent);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s;
+    display: inline-block;
+    font-weight: 500;
+  }
+
+  .btn-primary:hover {
+    background-color: var(--color-accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .btn-secondary {
+    background-color: transparent;
+    color: var(--color-ink);
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    border: 1px solid var(--color-warm-border);
+    transition: all 0.2s;
+    display: inline-block;
+    font-weight: 400;
+  }
+
+  .btn-secondary:hover {
+    background-color: var(--color-surface);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  }
+
+  .card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-warm-border);
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s;
+  }
+
+  .card:hover {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-4px);
+  }
+}

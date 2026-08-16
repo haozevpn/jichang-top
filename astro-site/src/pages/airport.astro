@@ -1,0 +1,172 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import NewbieGuide from '../components/NewbieGuide.astro';
+import AirportCard from '../components/AirportCard.astro';
+
+const airports = [
+  {
+    rank: 1,
+    name: '极连云',
+    rating: 9.9,
+    lineType: 'IEPL专线',
+    tags: ['IEPL专线', '不限速', '不限设备数', '支持不限时'],
+    price: '￥8.00/月起',
+    unlimitedTraffic: true,
+    trial: '无',
+    reviewLink: '/p/jilianyun-review/',
+    registerLink: 'https://haozevpn.jlyvipaff.com/#/?code=KUKfOY13',
+    description: '在2026年稳定机场推荐中位居前列的IEPL专线高速机场。完美支持Clash/Shadowrocket订阅，解锁流媒体与ChatGPT/Claude，是绝佳的AI专用机场与不限设备翻墙梯子。'
+  },
+  {
+    rank: 2,
+    name: '瞬云机场',
+    rating: 9.8,
+    lineType: 'Anycast直连',
+    tags: ['Anycast直连', '1倍率无虚标', '大带宽', '支持不限时'],
+    price: '￥8.25/月起',
+    unlimitedTraffic: true,
+    trial: '无',
+    reviewLink: '/p/shunyun-review/',
+    registerLink: 'https://bbb.jichang.best/#/register?code=o4I4kToe',
+    description: '全站一倍率无虚标的高性价比机场。作为便宜机场推荐首选，提供Anycast高速直连节点与不限时流量包，畅享4K视频与Netflix/YouTube解锁，堪称年度最好用机场和高稳定性科学上网梯子。'
+  },
+  {
+    rank: 3,
+    name: '云图',
+    rating: 9.7,
+    lineType: '金融级专线',
+    tags: ['金融级专线传输', '24H高速流畅', '无限下单即可', '24H保证稳定'],
+    price: '￥25.00/月起',
+    unlimitedTraffic: true,
+    trial: '无',
+    reviewLink: '/p/yuntu-review/',
+    registerLink: 'https://vip.ytjcok.org/#/register?code=75w0GoY2',
+    description: '采用金融级专线传输的高端稳定机场。提供150G起步流量，最高600G大流量套餐，完美解锁ChatGPT/Netflix/TikTok等主流平台。原生IP节点支持，工单24小时内快速回复。'
+  },
+  {
+    rank: 4,
+    name: '光年梯',
+    rating: 9.6,
+    lineType: '老牌机场',
+    tags: ['老牌机场', 'IEPL物理专线', '不限速', '不限时套餐'],
+    price: '￥7.50/月起',
+    unlimitedTraffic: true,
+    trial: '无',
+    reviewLink: '/p/guangnianti-review/',
+    registerLink: 'https://gnt001.gntvipaff.cc/#/?code=j1ufpE44',
+    description: '深耕行业多年的老牌物理专线机场。以极高的容灾稳定性著称，提供不限速、不限时的抗封锁Shadowsocks/Trojan协议节点，堪称大流量科学上网的良心梯子推荐。'
+  },
+  {
+    rank: 5,
+    name: '极速云机场',
+    rating: 9.5,
+    lineType: '中转加速',
+    tags: ['中转加速', '大带宽', '不限时套餐', '多平台兼容'],
+    price: '￥8.25/月起',
+    unlimitedTraffic: true,
+    trial: '无',
+    reviewLink: '/p/jisuyun-review/',
+    registerLink: 'https://ask.xsccusm.com:8888/#/register?code=RENHYxqv',
+    description: '采用高隐蔽性中转技术的性价比机场。提供极低起步价格，支持多协议订阅与一键节点配置，适合流媒体解锁与游戏加速。'
+  },
+  {
+    rank: 6,
+    name: '山水云',
+    rating: 9.4,
+    lineType: '隧道中转',
+    tags: ['隧道中转', '流媒体解锁', '按量付费', '设备无限制'],
+    price: '￥14.99/月起',
+    unlimitedTraffic: true,
+    trial: '无',
+    reviewLink: '/p/shanshuiyun-review/',
+    registerLink: 'https://haozevpn.jlyvipaff.com/#/?code=KUKfOY13',
+    description: '主打高速隧道中转与不限设备的稳定机场。支持V2Ray和Trojan多协议，提供干净的原生海外节点，完美解锁Netflix/Disney+。'
+  },
+];
+
+const comparisonData = [
+  { rank: 1, name: '极连云', lineType: 'IEPL专线', price: '￥8.00/月起', unlimited: '✅', link: 'https://haozevpn.jlyvipaff.com/#/?code=KUKfOY13' },
+  { rank: 2, name: '瞬云机场', lineType: 'Anycast直连', price: '￥8.25/月起', unlimited: '✅', link: 'https://bbb.jichang.best/#/register?code=o4I4kToe' },
+  { rank: 3, name: '云图', lineType: '金融级专线', price: '￥25.00/月起', unlimited: '✅', link: 'https://vip.ytjcok.org/#/register?code=75w0GoY2' },
+  { rank: 4, name: '光年梯', lineType: '老牌机场', price: '￥7.50/月起', unlimited: '✅', link: 'https://gnt001.gntvipaff.cc/#/?code=j1ufpE44' },
+  { rank: 5, name: '极速云机场', lineType: '中转加速', price: '￥8.25/月起', unlimited: '✅', link: 'https://ask.xsccusm.com:8888/#/register?code=RENHYxqv' },
+  { rank: 6, name: '山水云', lineType: '隧道中转', price: '￥14.99/月起', unlimited: '✅', link: 'https://haozevpn.jlyvipaff.com/#/?code=KUKfOY13' },
+];
+---
+
+<MainLayout
+  title="2026年最新稳定高速翻墙机场推荐排行榜与好用梯子推荐"
+  description="为您精选2026年最新、最优质的高品质稳定翻墙机场推荐排行榜。提供IEPL专线、IPLC专线、Trojan防封锁高速中转机场。"
+>
+  <div class="max-w-6xl mx-auto px-6 py-16">
+    <!-- Intro -->
+    <div class="mb-10">
+      <h1 class="text-4xl md:text-5xl font-serif mb-6 leading-tight text-center">
+        2026年最新<span class="italic text-[var(--color-accent)]">稳定高速</span>机场推荐
+      </h1>
+      <p class="text-lg text-[var(--color-muted)] text-center max-w-3xl mx-auto leading-relaxed">
+        我们长期自费订购并深度测试了以下机场服务。所有机场均支持多协议、多客户端订阅，解锁大部分流媒体与AI软件，请根据预算及线路偏好选择购买。新手建议先按月订阅进行测试。
+      </p>
+    </div>
+
+    <!-- Newbie Guide -->
+    <NewbieGuide />
+
+    <!-- SEO Intro -->
+    <div class="card p-6 mb-10 bg-gradient-to-br from-[var(--color-surface)] to-[var(--color-surface-white)]">
+      <h2 class="text-xl font-serif mb-4 border-l-4 border-[var(--color-accent)] pl-4">
+        💡 2026年科学上网机场与稳定梯子推荐指南
+      </h2>
+      <p class="text-[var(--color-muted)] leading-relaxed">
+        寻找好用且不跑路的<strong>稳定机场推荐</strong>与<strong>梯子推荐</strong>是每个网络出海冲浪者的核心诉求。在挑选高品质的<strong>代理节点</strong>和<strong>海外节点</strong>时，不仅要参考行业最新的<strong>机场排行</strong>，更需要评估其底层的物理专线（如 <strong>IEPL机场推荐</strong> / <strong>IPLC机场推荐</strong>）。下面为您精选了2026年最新的<strong>便宜机场推荐</strong>与<strong>高速机场推荐</strong>，帮您快速完成节点配置与智能分流。
+      </p>
+    </div>
+
+    <!-- Comparison Table -->
+    <div class="mb-12">
+      <h2 class="text-3xl font-serif mb-6">
+        🏆 核心机场<span class="italic text-[var(--color-accent)]">关键参数</span>对比
+      </h2>
+      <div class="overflow-x-auto">
+        <table class="w-full card">
+          <thead class="bg-[var(--color-surface)] border-b-2 border-[var(--color-warm-border)]">
+            <tr>
+              <th class="px-4 py-3 text-left text-sm font-semibold">排名</th>
+              <th class="px-4 py-3 text-left text-sm font-semibold">机场名称</th>
+              <th class="px-4 py-3 text-left text-sm font-semibold">线路类型</th>
+              <th class="px-4 py-3 text-left text-sm font-semibold">起步价格</th>
+              <th class="px-4 py-3 text-center text-sm font-semibold">不限时流量</th>
+              <th class="px-4 py-3 text-center text-sm font-semibold">注册</th>
+            </tr>
+          </thead>
+          <tbody>
+            {comparisonData.map((item, index) => (
+              <tr class={index % 2 === 0 ? 'bg-white' : 'bg-[var(--color-surface)]'}>
+                <td class="px-4 py-3 text-center font-bold text-[var(--color-accent)]">{item.rank}</td>
+                <td class="px-4 py-3 font-semibold">{item.name}</td>
+                <td class="px-4 py-3 text-sm">{item.lineType}</td>
+                <td class="px-4 py-3 font-medium">{item.price}</td>
+                <td class="px-4 py-3 text-center">{item.unlimited}</td>
+                <td class="px-4 py-3 text-center">
+                  <a href={item.link} target="_blank" rel="noopener" class="text-[var(--color-accent)] hover:text-[var(--color-accent-hover)] no-underline text-sm font-medium">
+                    前往 →
+                  </a>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Airport Cards -->
+    <div>
+      <h2 class="text-3xl font-serif mb-8">
+        🔍 2026年最新<span class="italic text-[var(--color-accent)]">稳定翻墙</span>机场推荐详解
+      </h2>
+      {airports.map((airport) => (
+        <AirportCard {...airport} />
+      ))}
+    </div>
+  </div>
+</MainLayout>
