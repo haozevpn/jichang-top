@@ -125,12 +125,15 @@ Clash 强大的核心优势在于其灵活的“策略组”机制。通过以�
 }
 </script>
 
-**Q: 机场和VPN哪个好用？**
-A: 在国内环境下，机场比传统VPN更稳定。机场使用的协议（Shadowsocks、Trojan等）专门设计用于对抗检测，连接成功率更高。
-
-**Q: 机场会被封吗？**
-A: 节点IP可能被封，但优质机场会快速补充新节点。建议选择有持续维护能力的机场，并准备备用机场。
-
-**Q: 新手怎么选机场？**
-A: 优先选择运营时间长、口碑好的机场，建议月付避免跑路风险，查看是否支持主流客户端和流媒体解锁。
-
+<details class="faq-item">
+<summary>机场和VPN哪个好用？</summary>
+<div class="faq-answer">在国内环境下，机场比传统VPN更稳定。机场使用的协议（Shadowsocks、Trojan等）专门设计用于对抗检测，连接成功率更高。</div>
+</details>
+<details class="faq-item">
+<summary>机场会被封吗？</summary>
+<div class="faq-answer">节点IP可能被封，但优质机场会快速补充新节点。建议选择有持续维护能力的机场，并准备备用机场。</div>
+</details>
+<details class="faq-item">
+<summary>新手怎么选机场？</summary>
+<div class="faq-answer">优先选择运营时间长、口碑好的机场，建议月付避免跑路风险，查看是否支持主流客户端和流媒体解锁。</div>
+</details>

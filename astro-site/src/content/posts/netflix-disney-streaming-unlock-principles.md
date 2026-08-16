@@ -125,12 +125,15 @@ Clash 强大的核心优势在于其灵活的“策略组”机制。通过以�
 }
 </script>
 
-**Q: Netflix提示使用代理怎么办？**
-A: 当前节点IP被Netflix识别为代理。需要切换到原生IP节点，选择机场提供的流媒体专用线路，或使用住宅IP节点。
-
-**Q: 为什么有些节点能解锁有些不能？**
-A: 流媒体平台会封禁数据中心IP。只有原生IP（ISP分配的住宅IP）或特殊优化的节点才能稳定解锁流媒体内容。
-
-**Q: 看4K视频需要多快的速度？**
-A: Netflix 4K需要25Mbps稳定带宽，建议选择100Mbps以上的节点，使用IPLC/IEPL专线可获得最佳体验。
-
+<details class="faq-item">
+<summary>Netflix提示使用代理怎么办？</summary>
+<div class="faq-answer">当前节点IP被Netflix识别为代理。需要切换到原生IP节点，选择机场提供的流媒体专用线路，或使用住宅IP节点。</div>
+</details>
+<details class="faq-item">
+<summary>为什么有些节点能解锁有些不能？</summary>
+<div class="faq-answer">流媒体平台会封禁数据中心IP。只有原生IP（ISP分配的住宅IP）或特殊优化的节点才能稳定解锁流媒体内容。</div>
+</details>
+<details class="faq-item">
+<summary>看4K视频需要多快的速度？</summary>
+<div class="faq-answer">Netflix 4K需要25Mbps稳定带宽，建议选择100Mbps以上的节点，使用IPLC/IEPL专线可获得最佳体验。</div>
+</details>

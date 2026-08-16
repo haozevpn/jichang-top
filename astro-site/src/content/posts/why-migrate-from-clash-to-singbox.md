@@ -125,12 +125,15 @@ Clash 强大的核心优势在于其灵活的“策略组”机制。通过以�
 }
 </script>
 
-**Q: Clash和Sing-box哪个好？**
-A: Sing-box性能更优、内存占用更低，且持续维护。Clash已停更，建议新用户选择Sing-box或Clash Verge Rev。
-
-**Q: 客户端订阅导入失败怎么办？**
-A: 检查订阅链接是否正确、网络连接是否正常，尝试切换订阅类型（Clash/V2Ray/Sing-box），或联系机场客服获取帮助。
-
-**Q: 需要配置分流规则吗？**
-A: 不是必须的。大多数机场提供的订阅已包含基础规则，国内直连、国外代理自动分流。进阶用户可自定义规则优化体验。
-
+<details class="faq-item">
+<summary>Clash和Sing-box哪个好？</summary>
+<div class="faq-answer">Sing-box性能更优、内存占用更低，且持续维护。Clash已停更，建议新用户选择Sing-box或Clash Verge Rev。</div>
+</details>
+<details class="faq-item">
+<summary>客户端订阅导入失败怎么办？</summary>
+<div class="faq-answer">检查订阅链接是否正确、网络连接是否正常，尝试切换订阅类型（Clash/V2Ray/Sing-box），或联系机场客服获取帮助。</div>
+</details>
+<details class="faq-item">
+<summary>需要配置分流规则吗？</summary>
+<div class="faq-answer">不是必须的。大多数机场提供的订阅已包含基础规则，国内直连、国外代理自动分流。进阶用户可自定义规则优化体验。</div>
+</details>

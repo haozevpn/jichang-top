@@ -125,12 +125,15 @@ Clash 强大的核心优势在于其灵活的“策略组”机制。通过以�
 }
 </script>
 
-**Q: 新手怎么开始科学上网？**
-A: 选择一个稳定的机场订阅服务，下载对应客户端（Clash、Shadowrocket等），导入订阅链接，选择节点开启代理即可。
-
-**Q: 科学上网安全吗？**
-A: 选择可信机场，避免在代理环境下输入敏感信息（银行密码等），不访问违法网站，正常使用风险较低。
-
-**Q: 机场被封怎么办？**
-A: 优质机场会及时补充新节点。建议同时订阅2-3个不同机场作为备份，避免单点故障影响使用。
-
+<details class="faq-item">
+<summary>新手怎么开始科学上网？</summary>
+<div class="faq-answer">选择一个稳定的机场订阅服务，下载对应客户端（Clash、Shadowrocket等），导入订阅链接，选择节点开启代理即可。</div>
+</details>
+<details class="faq-item">
+<summary>科学上网安全吗？</summary>
+<div class="faq-answer">选择可信机场，避免在代理环境下输入敏感信息（银行密码等），不访问违法网站，正常使用风险较低。</div>
+</details>
+<details class="faq-item">
+<summary>机场被封怎么办？</summary>
+<div class="faq-answer">优质机场会及时补充新节点。建议同时订阅2-3个不同机场作为备份，避免单点故障影响使用。</div>
+</details>

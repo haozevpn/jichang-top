@@ -101,3 +101,45 @@
     transform: translateY(-4px);
   }
 }
+/* FAQ 折叠样式 */
+details.faq-item {
+  border: 1px solid var(--color-warm-border);
+  border-radius: 0.5rem;
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+}
+
+details.faq-item summary {
+  padding: 1rem 1.25rem;
+  font-weight: 500;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-surface);
+  transition: background-color 0.2s;
+}
+
+details.faq-item summary:hover {
+  background-color: var(--color-accent-tint);
+}
+
+details.faq-item summary::after {
+  content: '+';
+  font-size: 1.25rem;
+  color: var(--color-accent);
+  transition: transform 0.2s;
+}
+
+details.faq-item[open] summary::after {
+  transform: rotate(45deg);
+}
+
+details.faq-item .faq-answer {
+  padding: 1rem 1.25rem;
+  color: var(--color-muted);
+  line-height: 1.7;
+  border-top: 1px solid var(--color-warm-border);
+  background-color: white;
+}

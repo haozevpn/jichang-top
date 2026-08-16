@@ -125,12 +125,15 @@ Clash 强大的核心优势在于其灵活的“策略组”机制。通过以�
 }
 </script>
 
-**Q: 该机场稳定吗？**
-A: 根据实测，该机场在晚高峰延迟稳定，丢包率低于1%，采用专线中转技术，适合日常使用。
-
-**Q: 该机场能解锁流媒体吗？**
-A: 支持Netflix、Disney+、YouTube等主流流媒体解锁，提供原生IP节点，4K视频流畅播放。
-
-**Q: 该机场价格怎么样？**
-A: 起步价约¥30/月，提供多种套餐选择，性价比在同类机场中处于中上水平。
-
+<details class="faq-item">
+<summary>该机场稳定吗？</summary>
+<div class="faq-answer">根据实测，该机场在晚高峰延迟稳定，丢包率低于1%，采用专线中转技术，适合日常使用。</div>
+</details>
+<details class="faq-item">
+<summary>该机场能解锁流媒体吗？</summary>
+<div class="faq-answer">支持Netflix、Disney+、YouTube等主流流媒体解锁，提供原生IP节点，4K视频流畅播放。</div>
+</details>
+<details class="faq-item">
+<summary>该机场价格怎么样？</summary>
+<div class="faq-answer">起步价约¥30/月，提供多种套餐选择，性价比在同类机场中处于中上水平。</div>
+</details>
