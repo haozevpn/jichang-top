@@ -22,6 +22,25 @@ export async function getStaticPaths() {
 
 const { category, posts } = Astro.props;
 
+// SEO优化：根据分类生成特定的title和description
+const seoConfig: Record<string, { title: string; description: string }> = {
+  '机场测评': {
+    title: `机场测评 - 2026年稳定机场推荐与梯子推荐详细评测 | 机场TOP`,
+    description: `专业的机场测评文章合集，包含IEPL专线机场推荐、稳定机场推荐、高速梯子推荐的详细测评。涵盖速界、快狸、可信云、极连云等优质机场评测，帮您选择最适合的科学上网服务。`
+  },
+  '科学上网指南': {
+    title: `科学上网指南 - 梯子推荐教程与VPN推荐使用技巧 | 机场TOP`,
+    description: `全面的科学上网指南与梯子推荐教程，涵盖机场选购、节点配置、防封锁技巧。提供Clash、Shadowrocket等客户端使用教程，以及VPN推荐对比分析，助您安全稳定上网。`
+  },
+  '新手指南': {
+    title: `新手指南 - 机场推荐入门教程与梯子推荐快速上手 | 机场TOP`,
+    description: `专为新手打造的机场推荐入门指南，包含稳定机场推荐选择、梯子推荐配置教程、常见问题解答。从零开始学习科学上网，快速掌握VPN推荐与代理节点使用技巧。`
+  }
+};
+
+const pageTitle = seoConfig[category]?.title || `${category} - 机场TOP稳定机场推荐`;
+const pageDescription = seoConfig[category]?.description || `浏览所有关于 ${category} 的文章，涵盖机场推荐、稳定机场推荐、梯子推荐等专业内容。`;
+
 function formatDate(date: Date) {
   return new Intl.DateTimeFormat('zh-CN', {
     year: 'numeric',
@@ -32,8 +51,8 @@ function formatDate(date: Date) {
 ---
 
 <MainLayout
-  title={`${category} - 机场TOP`}
-  description={`浏览所有关于 ${category} 的文章`}
+  title={pageTitle}
+  description={pageDescription}
 >
   <div class="max-w-5xl mx-auto px-6 py-16">
     <!-- Header -->

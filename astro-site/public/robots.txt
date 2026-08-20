@@ -1,10 +1,16 @@
+# 机场TOP - 专业机场推荐平台
 User-agent: *
 Allow: /
 
-# 主站点地图
-Sitemap: https://jichang-top.com/sitemap.xml
+# 重点页面
+Allow: /airport
+Allow: /categories/
+Allow: /p/
 
-# 允许所有搜索引擎爬取
+# Sitemap
+Sitemap: https://jichang-top.com/sitemap-index.xml
+
+# 搜索引擎爬虫优化
 User-agent: Googlebot
 Allow: /
 
@@ -14,14 +20,6 @@ Allow: /
 User-agent: Baiduspider
 Allow: /
 
-User-agent: Sogou spider
-Allow: /
-
-# 禁止爬取搜索页面和标签页面的分页
-Disallow: /search/
-Disallow: /page/
-Disallow: /tags/page/
-Disallow: /categories/page/
-
-# 爬取频率建议
-Crawl-delay: 1
+# 禁止访问
+Disallow: /api/
+Disallow: /_astro/

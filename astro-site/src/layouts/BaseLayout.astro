@@ -23,6 +23,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <title>{title}</title>
     <link rel="canonical" href={canonicalURL} />
     {description && <meta name="description" content={description} />}
+    <meta name="keywords" content="机场推荐,稳定机场推荐,梯子推荐,VPN推荐,科学上网,翻墙工具,IEPL专线,高速机场,机场排行榜" />
+    <meta name="author" content="机场TOP" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -30,6 +32,30 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta property="og:title" content={title} />
     {description && <meta property="og:description" content={description} />}
     {image && <meta property="og:image" content={new URL(image, Astro.site)} />}
+    <meta property="og:site_name" content="机场TOP - 专业机场推荐平台" />
+    <meta property="og:locale" content="zh_CN" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    {description && <meta name="twitter:description" content={description} />}
+    {image && <meta name="twitter:image" content={new URL(image, Astro.site)} />}
+
+    <!-- Schema.org 结构化数据 -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "机场TOP",
+        "description": "专业的机场推荐、稳定机场推荐、梯子推荐与VPN推荐平台",
+        "url": "https://jichang-top.com",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://jichang-top.com/search?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
