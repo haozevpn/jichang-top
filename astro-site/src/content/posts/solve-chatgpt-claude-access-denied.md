@@ -1,6 +1,7 @@
 ---
 title: "解决 ChatGPT、Claude “Access Denied” 和 IP风控的终极机场节点策略"
-description: "这是一篇关于【解决 ChatGPT、Claude “Access Denied” 和 IP风控的终极机场节点策略】的深度科普知识指南。我们将从技术原理、行业现状、应用场景到具体的配置调优，为您进行系统性的多维度拆解。"
+description: "彻底解决ChatGPT、Claude提示Access Denied无法访问的问题。本文详解OpenAI风控原理、原生IP与中转IP区别、如何选择支持AI解锁的稳定机场推荐。教你正确配置节点、避免账号封禁，稳定使用ChatGPT、Claude等AI大模型工具。"
+keywords: "ChatGPT无法访问,Claude解锁,Access Denied,AI机场推荐,机场推荐,原生IP,稳定机场推荐"
 date: 2026-06-06
 tags: ["AI解锁","ChatGPT","Claude","节点配置"]
 categories: ["科学上网指南"]

@@ -1,0 +1,107 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+
+// 友情链接数据
+const friendLinks = [
+  {
+    name: 'Clash机场',
+    url: 'https://clash-jichang.com',
+    description: '专业的Clash机场推荐与配置教程站点，提供最新稳定机场推荐、Clash订阅使用指南与节点测评。',
+    tags: ['Clash机场', '机场推荐', '订阅教程']
+  },
+  {
+    name: 'ClashMac',
+    url: 'https://clashmac.vip',
+    description: 'Mac平台Clash与科学上网工具专业指南，提供稳定机场推荐、Clash for Mac配置教程与流媒体解锁攻略。',
+    tags: ['Mac科学上网', '机场推荐', 'Clash教程']
+  },
+];
+---
+
+<MainLayout
+  title="友情链接 - 优质机场推荐与科学上网资源导航 | 机场TOP"
+  description="机场TOP友情链接页面，收录优质的机场推荐、稳定机场推荐、梯子推荐与Clash教程资源站点。这里汇集了值得信赖的科学上网导航、机场评测与VPN推荐合作伙伴，助您找到更多优质翻墙工具资源。"
+>
+  <div class="max-w-4xl mx-auto px-6 py-16">
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">
+        友情<span class="italic text-[var(--color-accent)]">链接</span>
+      </h1>
+      <p class="text-xl text-[var(--color-muted)] font-light">
+        精选优质机场推荐与科学上网资源站点
+      </p>
+    </div>
+
+    <!-- Intro -->
+    <div class="card p-6 mb-10 bg-gradient-to-br from-[var(--color-surface)] to-[var(--color-surface-white)]">
+      <p class="text-[var(--color-muted)] leading-relaxed">
+        以下是我们精心筛选的<strong>机场推荐</strong>与<strong>科学上网</strong>相关的优质合作站点。这些站点同样专注于提供真实、客观的<strong>稳定机场推荐</strong>、<strong>梯子推荐</strong>与Clash配置教程，是您获取翻墙工具资源的可靠参考。
+      </p>
+    </div>
+
+    <!-- Friend Links Grid -->
+    <div class="grid gap-6 mb-12">
+      {friendLinks.map((link) => (
+        <a
+          href={link.url}
+          target="_blank"
+          rel="noopener external"
+          class="card p-6 hover:shadow-lg transition-all group no-underline"
+        >
+          <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+            <div class="flex-1">
+              <h2 class="text-2xl font-serif mb-2 text-[var(--color-ink)] group-hover:text-[var(--color-accent)] transition-colors">
+                {link.name}
+                <span class="text-sm font-sans text-[var(--color-muted)] ml-2">↗</span>
+              </h2>
+              <p class="text-[var(--color-muted)] leading-relaxed mb-3">
+                {link.description}
+              </p>
+              <div class="flex flex-wrap gap-2">
+                {link.tags.map((tag) => (
+                  <span class="text-xs px-3 py-1 bg-[var(--color-accent-tint)] text-[var(--color-accent)] rounded-full">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div class="text-sm text-[var(--color-muted)] font-mono">
+              {link.url.replace('https://', '')}
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <!-- Exchange Info -->
+    <div class="card p-8 bg-gradient-to-br from-[var(--color-surface)] to-[var(--color-surface-white)]">
+      <h2 class="text-2xl font-serif mb-4 border-l-4 border-[var(--color-accent)] pl-4">
+        🤝 友链交换
+      </h2>
+      <p class="text-[var(--color-muted)] leading-relaxed mb-4">
+        我们欢迎与<strong>机场推荐</strong>、<strong>科学上网指南</strong>、Clash教程等相关主题的优质站点交换友情链接。互换友链有助于双方提升网站权重与访问量。
+      </p>
+      <div class="bg-[var(--color-surface)] p-4 rounded-lg mb-4">
+        <h3 class="font-semibold mb-3">本站信息（用于对方添加）：</h3>
+        <ul class="space-y-2 text-sm text-[var(--color-muted)]">
+          <li><strong>站点名称：</strong>机场TOP</li>
+          <li><strong>站点地址：</strong>https://jichang-top.com</li>
+          <li><strong>站点描述：</strong>专业的机场推荐、稳定机场推荐、梯子推荐与VPN推荐平台</li>
+        </ul>
+      </div>
+      <div class="bg-[var(--color-accent-tint)] p-4 rounded-lg">
+        <h3 class="font-semibold mb-2 text-[var(--color-accent)]">交换要求：</h3>
+        <ul class="space-y-1 text-sm text-[var(--color-muted)]">
+          <li>✅ 站点内容与科学上网、机场推荐相关</li>
+          <li>✅ 站点内容原创、健康、正规</li>
+          <li>✅ 站点已稳定运营，访问速度正常</li>
+          <li>✅ 优先考虑同类型高质量站点</li>
+        </ul>
+      </div>
+      <p class="text-[var(--color-muted)] leading-relaxed mt-4">
+        如需交换友链，请通过邮箱联系：<a href="mailto:contact@jichang-top.com" class="text-[var(--color-accent)] hover:underline">contact@jichang-top.com</a>
+      </p>
+    </div>
+  </div>
+</MainLayout>

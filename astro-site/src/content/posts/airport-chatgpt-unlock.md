@@ -1,6 +1,7 @@
 ---
 title: "机场用ChatGPT老是被封号？原来是这个原因"
-description: "用机场访问ChatGPT频繁遇到封号或无法注册？核心原因在于节点IP类型。本文解释原生IP和中转IP的区别，为什么某些节点容易触发OpenAI风控，以及如何选对节点避免账号被封。"
+description: "用机场推荐访问ChatGPT频繁遇到封号或无法注册？核心原因在于节点IP类型。本文详解原生IP和中转IP的区别、为什么某些机场推荐节点容易触发OpenAI风控、如何判断节点质量。教你选对支持ChatGPT解锁的AI机场推荐，避免账号被封，稳定使用AI工具。"
+keywords: "机场推荐,ChatGPT机场,原生IP机场推荐,AI机场推荐,稳定机场推荐,ChatGPT解锁,机场节点选择"
 date: 2026-08-16
 tags: ["ChatGPT机场","AI工具解锁","原生IP"]
 categories: ["科学上网指南"]
