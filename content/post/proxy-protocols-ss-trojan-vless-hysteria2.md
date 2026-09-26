@@ -1,6 +1,6 @@
 ---
 title: "主流翻墙协议大比拼：Shadowsocks、VLESS Reality、Trojan 与 Hysteria 2 全面解析"
-description: "这是一篇关于【主流翻墙协议大比拼：Shadowsocks、VLESS Reality、Trojan 与 Hysteria 2 全面解析】的深度科普知识指南。我们将从技术原理、行业现状、应用场景到具体的配置调优，为您进行系统性的多维度拆解。"
+description: "深度解析Shadowsocks、Trojan、VLESS、Hysteria2四大主流代理协议的原理与区别。本文对比各协议的加密方式、抗封锁能力、传输速度与适用场景，帮您理解机场推荐使用的核心技术，选择最适合的协议与稳定机场推荐服务，优化科学上网体验。"
 date: 2026-06-06
 tags: ["协议科普","Shadowsocks","VLESS","Hysteria"]
 categories: ["科学上网指南"]

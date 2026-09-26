@@ -178,3 +178,9 @@
 {{- /* Twitter Card */ -}}
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="{{ .Title }} | {{ .Site.Title }}" />
+
+{{- /* GEO & Region / Multilingual Meta */ -}}
+<meta property="og:locale" content="zh_CN" />
+<link rel="alternate" hreflang="zh-CN" href="{{ .Permalink }}" />
+<link rel="alternate" hreflang="x-default" href="{{ .Permalink }}" />
+

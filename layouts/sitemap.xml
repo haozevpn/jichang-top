@@ -1,7 +1,7 @@
 {{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML -}}
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  {{ range .Data.Pages }}
+  {{ range .Site.AllPages }}
     {{- if .Permalink -}}
       {{- $sitemapExclude := or .Params.private (and .Params.sitemap (eq .Params.sitemap.disable true)) -}}
       {{- if not $sitemapExclude -}}
@@ -24,14 +24,10 @@
                 href="{{ .Permalink }}"
                 />
       {{- end }}
-    <xhtml:link
-                rel="alternate"
-                hreflang="{{ .Lang }}"
-                href="{{ .Permalink }}"
-                />
     {{- end }}
   </url>
       {{- end -}}
     {{- end -}}
   {{ end }}
 </urlset>
+
