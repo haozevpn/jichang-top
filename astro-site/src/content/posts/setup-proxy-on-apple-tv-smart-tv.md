@@ -1,6 +1,6 @@
 ---
 title: "Apple TV、智能电视大屏科学上网终极教程：从 tvOS 17 代理到软路由配置"
-description: "Apple TV与智能电视科学上网完整配置教程。本文详解如何为Apple TV、安卓电视、智能电视盒子配置代理，实现4K流媒体解锁。涵盖路由器方案、DNS方案与客户端方案，配合稳定机场推荐使用，让大屏设备畅享Netflix、YouTube 4K内容。"
+description: "Apple TV与智能电视大屏科学上网终极配置教程。本文详解tvOS 17原生代理支持、Shadowrocket/Sing-box配置方法以及软路由全局代理搭建流程。教你如何将智能电视连接到稳定机场推荐节点，轻松解锁4K Netflix、YouTube及Disney+等海外大屏影音。"
 keywords: "Apple TV翻墙,智能电视科学上网,电视盒子代理,机场推荐,稳定机场推荐,4K流媒体"
 date: 2026-06-06
 tags: ["电视翻墙","Apple TV","智能电视"]

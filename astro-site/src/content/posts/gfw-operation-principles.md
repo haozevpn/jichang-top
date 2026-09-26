@@ -1,6 +1,6 @@
 ---
 title: "深入解析 GFW 防火墙的工作原理与机场流量的特征混淆机制"
-description: "深入解析GFW防火墙的工作原理与机场流量特征混淆机制。本文详解DPI深度包检测、IP封锁、DNS污染、SNI阻断等封锁技术，以及Shadowsocks、Trojan、VLESS Reality等协议如何对抗检测，帮您理解科学上网的底层原理，选择抗封锁能力强的稳定机场推荐。"
+description: "深入解析GFW防火墙的工作原理与机场流量特征混淆机制。本文详解DPI深度包检测、IP封锁、DNS污染、SNI阻断等封锁技术，以及Shadowsocks、Trojan、VLESS Reality等协议如何对抗检测，帮您理解科学上网的底层原理，选择抗封锁能力强的稳定机场推荐服务。"
 keywords: "GFW原理,防火墙,流量混淆,机场推荐,科学上网原理,协议对抗,DPI检测"
 date: 2026-06-06
 tags: ["网络科普","GFW原理","流量伪装"]
